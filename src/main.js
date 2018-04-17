@@ -18,9 +18,9 @@ let config = {
         }
     },
     scene: [
-        BootScene,
-        TitleScene,
-        MarioBrosScene,
+        // BootScene,
+        // TitleScene,
+        // MarioBrosScene,
     ]
 };
 
