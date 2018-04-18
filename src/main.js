@@ -2,11 +2,11 @@ import 'phaser';
 import BootScene from './BootScene';
 import MarioBrosScene from './MarioBrosScene';
 import TitleScene from './TitleScene';
-import LetterScence from './LetterScence';
-import GuideScence from './GuideScence';
-import IntroScence1 from './IntroScence1';
-import IntroScence2 from './IntroScence2';
-import IntroScence3 from './IntroScence3';
+import LetterScene from './LetterScene';
+import GuideScene from './GuideScene';
+import IntroScene1 from './IntroScene1';
+import IntroScene2 from './IntroScene2';
+import IntroScene3 from './IntroScene3';
 
 let config = {
     type: Phaser.WEBGL,
@@ -25,11 +25,11 @@ let config = {
         // BootScene,
         // TitleScene,
         // MarioBrosScene,
-        LetterScence,
-        GuideScence,
-        IntroScence1,
-        IntroScence2,
-        IntroScence3
+        // LetterScene,
+        GuideScene,
+        IntroScene1,
+        IntroScene2,
+        IntroScene3
     ]
 };
 
