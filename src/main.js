@@ -1,7 +1,7 @@
 import 'phaser';
-import BootScene from './BootScene';
-import MarioBrosScene from './MarioBrosScene';
-import TitleScene from './TitleScene';
+// import BootScene from './BootScene';
+// import MarioBrosScene from './MarioBrosScene';
+// import TitleScene from './TitleScene';
 import LetterScene from './LetterScene';
 import GuideScene from './GuideScene';
 import IntroScene1 from './IntroScene1';
@@ -11,21 +11,14 @@ import IntroScene3 from './IntroScene3';
 let config = {
     type: Phaser.WEBGL,
     parent: 'content',
-    width: 400,
-    height: 240,
+    width: 750,
+    height: 1334,
     scaleMode: 0, //Phaser.ScaleManager.EXACT_FIT,
-    physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: { y: 800 },
-            debug: false
-        }
-    },
     scene: [
         // BootScene,
         // TitleScene,
         // MarioBrosScene,
-        // LetterScene,
+        LetterScene,
         GuideScene,
         IntroScene1,
         IntroScene2,

@@ -47,7 +47,8 @@ module.exports = {
                 removeComments: false,
                 removeEmptyAttributes: false
             },
-            hash: false
+            hash: false,
+            inject: false // fix: only one instance of babel-polyfill is allowed
         }),
         new BrowserSyncPlugin({
             host: process.env.IP || 'localhost',

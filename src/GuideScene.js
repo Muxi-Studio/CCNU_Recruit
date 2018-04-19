@@ -2,4 +2,15 @@
 
 import Animated from 'phaser-animated-tiles';
 
-class GuideScene
+class GuideScene extends Phaser.Scene {
+  constructor(test) {
+    super({
+      key: 'GuideScene'
+    });
+  }
+  preload() {
+    this.load.image('')
+  }
+}
+
+export default GuideScene;
