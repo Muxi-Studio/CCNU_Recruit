@@ -8,13 +8,12 @@ class LetterScene extends Phaser.Scene {
     });
   }
   preload() {
-    this.load.image('Letter-background','../assests/letterBackground.png');
+    this.load.image('letter-background','../assests/letterBackground.png');
     this.load.image('letter-cover', '../assests/letterCover.png');
     this.load.image('letter', '../assests/letter.png');
   }
   create() {
-    console.log("hah")
-    this.add.image(0, 0, 'Letter-bakcground').setOrigin(0, 0);
+    this.add.image(0, 0, 'letter-background').setOrigin(0, 0);
     //this.scene.start('Letter-bakcground');
   }
 }

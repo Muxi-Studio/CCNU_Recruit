@@ -9,7 +9,7 @@ import IntroScene2 from './IntroScene2';
 import IntroScene3 from './IntroScene3';
 
 let config = {
-    type: Phaser.WEBGL,
+    type: Phaser.AUTO,
     parent: 'content',
     width: 750,
     height: 1334,
@@ -19,10 +19,10 @@ let config = {
         // TitleScene,
         // MarioBrosScene,
         LetterScene,
-        GuideScene,
-        IntroScene1,
-        IntroScene2,
-        IntroScene3
+        // GuideScene,
+        // IntroScene1,
+        // IntroScene2,
+        // IntroScene3
     ]
 };
 
