@@ -1,4 +1,6 @@
-
+// var gamescaleX = window.innerWidth / 750;
+// var gamescaleY = window.innerHeight / 1334;
+import scaleConfig  from './common'
 class Recruit extends Phaser.Scene{
     constructor(){
         super({
@@ -17,8 +19,18 @@ class Recruit extends Phaser.Scene{
         this.load.image('6-6','../assests/6-6.png');
     }
     create() {
-        console.log("into")
-        this.add.image(0,0,'all-background')
+        //设置位置和图片缩放比例
+        let background = this.add.image(scaleConfig.moveX,scaleConfig.moveY,'all-background');
+        background.scaleX = scaleConfig.gamescaleX;
+        background.scaleY = scaleConfig.gamescaleY;
+        // console.log("into")
+        // let  moveX =  window.innerWidth/2;
+        // let  moveY =  window.innerHeight/2;
+        // let background =  this.add.image(moveX,moveY,'all-background')
+        // background.scaleX = gamescaleX;
+        // background.scaleY =  gamescaleY;
+
+      // Phaser.Actions.ScaleXY(background, 0.5,0.5);
     }
 }
 export default Recruit;
