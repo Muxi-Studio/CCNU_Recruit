@@ -4,7 +4,7 @@ import scaleConfig  from './common'
 class Recruit extends Phaser.Scene{
     constructor(){
         super({
-            key:"RecruitScene"
+            key:"recruitScene"
         });
     }
     preload() {
