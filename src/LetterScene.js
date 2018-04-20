@@ -4,7 +4,7 @@ import Animated from 'phaser-animated-tiles';
 class LetterScene extends Phaser.Scene {
   constructor(test) {
     super({
-      key: 'LetterScene'
+      key: 'letterScene'
     });
   }
   preload() {
@@ -14,7 +14,10 @@ class LetterScene extends Phaser.Scene {
   }
   create() {
     this.add.image(0, 0, 'letter-background').setOrigin(0, 0);
-    //this.scene.start('Letter-bakcground');
+    //this.scene.start('RecruitScene');
+    //场景转换
+    
+    this.scene.launch('recruitScene')
   }
 }
 export default LetterScene;
