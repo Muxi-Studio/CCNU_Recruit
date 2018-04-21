@@ -6,6 +6,7 @@ class Recruit extends Phaser.Scene{
             key:"recruitScene"
         });
     }
+
     preload() {
         this.load.image('all-background','../assests/background.png');
         this.load.image('all-coffee','../assests/coffee.png');
