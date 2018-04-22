@@ -18,7 +18,7 @@ let config = {
     scene: [
         WelfareScene,
         // LetterScene,
-        // Recruit,
+        Recruit,
         // GuideScene,
         // IntroScene1,
         // IntroScene2,
