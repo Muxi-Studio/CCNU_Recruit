@@ -1,12 +1,11 @@
 import 'phaser';
-// import BootScene from './BootScene';
-// import MarioBrosScene from './MarioBrosScene';
-// import TitleScene from './TitleScene';
-import letterScene from './letterScene';
-import guideScene from './guideScene';
-import locationScene from './locationScene';
-import academyScene from './academyScene';
-import historyScene from './historyScene';
+import scaleConfig from './common'
+import WelfareScene from './welfareScene';
+import LetterScene from './LetterScene';
+import GuideScene from './GuideScene';
+import IntroScene1 from './IntroScene1';
+import IntroScene2 from './IntroScene2';
+import IntroScene3 from './IntroScene3';
 import Recruit from './recruitScene';
 import scaleConfig from './common';
 
@@ -17,11 +16,13 @@ let config = {
     height: scaleConfig.gameheight,
     scaleMode: 0, //Phaser.ScaleManager.EXACT_FIT,
     scene: [
-        letterScene,
-        guideScene,
-        locationScene,
-        academyScene,
-        historyScene
+        WelfareScene,
+        // LetterScene,
+        // Recruit,
+        // GuideScene,
+        // IntroScene1,
+        // IntroScene2,
+        // IntroScene3
     ],
     physics:{
         default:'matter',
@@ -29,6 +30,7 @@ let config = {
             enableSleeping: true
         }
     }
+    
 };
 
 let game = new Phaser.Game(config);
