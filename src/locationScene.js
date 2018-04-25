@@ -1,5 +1,3 @@
-// 引导页 离家的时候。。
-
 import Animated from 'phaser-animated-tiles';
 import scaleConfig from './common';
 
@@ -24,6 +22,7 @@ class LocationScene extends Phaser.Scene {
     this.load.image('word2', '../assests/locarion-2.png');
   }
   create() {
+    console.log("location")
     let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');
     background.scaleX = scaleConfig.gamescaleX;
     background.scaleY = scaleConfig.gamescaleY;
@@ -53,9 +52,9 @@ class LocationScene extends Phaser.Scene {
     word2.scaleX = scaleConfig.gamescaleX;
     word2.scaleY = scaleConfig.gamescaleY;
 
-    // this.input.on('pointerdown', function () {
-    //   this.scene.start('AcademyScene');
-    // }, this);
+    this.input.on('pointerdown', function () {
+      this.scene.start('AcademyScene');
+    }, this);
   }
 
   update() {

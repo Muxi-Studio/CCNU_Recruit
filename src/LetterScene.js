@@ -1,7 +1,7 @@
 import Animated from 'phaser-animated-tiles';
 import scaleConfig from './common';
 
-var arrow;
+var arrow, letter, start;
 var flag = 1;
 
 class LetterScene extends Phaser.Scene {
@@ -11,23 +11,32 @@ class LetterScene extends Phaser.Scene {
     });
   }
   preload() {
-    this.load.image('letter-background','../assests/letterBackground.png');
-    this.load.image('letter-cover', '../assests/letterCover.png');
+    this.load.image('letterBackground','../assests/letterBackground.png');
+    this.load.image('letterCover', '../assests/letterCover.png');
     this.load.image('letter', '../assests/letter.png');
     this.load.image('arrow', '../assests/arrow.png');
     this.load.image('camera', '../assests/camera.png');
     this.load.image('start', '../assests/startRead.png');
+    this.load.image('letterCoverUp', '../assests/letterCoverUp.png');
   }
   create() {
-    let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'letter-background');
+    let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'letterBackground');
     background.scaleX = scaleConfig.gamescaleX;
     background.scaleY = scaleConfig.gamescaleY;
     
-    arrow = this.add.image(scaleConfig.moveX, 1142 * scaleConfig.gamescaleY, 'arrow');
+    arrow = this.add.image(scaleConfig.moveX, 1142 * scaleConfig.gamescaleY, 'arrow').setAlpha(0);
     arrow.scaleX = scaleConfig.gamescaleX;
     arrow.scaleY = scaleConfig.gamescaleY;
 
-    let letterCover = this.add.image(scaleConfig.moveX, 800 * scaleConfig.gamescaleY, 'letter-cover');
+    let letterCoverUp = this.add.image(scaleConfig.moveX, 530 * scaleConfig.gamescaleY, 'letterCoverUp');
+    letterCoverUp.scaleX = scaleConfig.gamescaleX;
+    letterCoverUp.scaleY = scaleConfig.gamescaleY;
+
+    letter = this.add.image(scaleConfig.moveX, 1000 * scaleConfig.gamescaleY, 'letter');
+    letter.scaleX = scaleConfig.gamescaleX;
+    letter.scaleY = scaleConfig.gamescaleY;
+
+    let letterCover = this.add.image(scaleConfig.moveX, 800 * scaleConfig.gamescaleY, 'letterCover');
     letterCover.scaleX = scaleConfig.gamescaleX;
     letterCover.scaleY = scaleConfig.gamescaleY;
 
@@ -35,7 +44,7 @@ class LetterScene extends Phaser.Scene {
     camera.scaleX = scaleConfig.gamescaleX;
     camera.scaleY = scaleConfig.gamescaleY;
 
-    let start = this.add.image(scaleConfig.moveX, 1062 * scaleConfig.gamescaleY, 'start');
+    start = this.add.image(scaleConfig.moveX, 1062 * scaleConfig.gamescaleY, 'start').setAlpha(0);
     start.scaleX = scaleConfig.gamescaleX;
     start.scaleY = scaleConfig.gamescaleY;
 
@@ -44,13 +53,19 @@ class LetterScene extends Phaser.Scene {
     }, this);
   }
   update() {
-    if (arrow.y < scaleConfig.gamescaleY * 1200 && flag == 1) {
-      arrow.y += 0.5;
-    }
-    if (arrow.y >= scaleConfig.gamescaleY * 1200 || flag == 0){
-      arrow.y -= 0.5;
-      flag = 0;
-      if (arrow.y == scaleConfig.gamescaleY * 1142) flag = 1;
+    if (letter.y >= 800 * scaleConfig.gamescaleY) {
+      letter.y -= 1;
+    } else {
+      arrow.setAlpha(1);
+      start.setAlpha(1);
+      if (arrow.y < scaleConfig.gamescaleY * 1200 && flag == 1) {
+        arrow.y += 0.5;
+      }
+      if (arrow.y >= scaleConfig.gamescaleY * 1200 || flag == 0){
+        arrow.y -= 0.5;
+        flag = 0;
+        if (arrow.y == scaleConfig.gamescaleY * 1142) flag = 1;
+      }
     }
   }
 }

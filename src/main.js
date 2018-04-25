@@ -1,13 +1,12 @@
 import 'phaser';
-import scaleConfig from './common'
 import WelfareScene from './welfareScene';
 import LetterScene from './LetterScene';
-import GuideScene from './GuideScene';
-import IntroScene1 from './IntroScene1';
-import IntroScene2 from './IntroScene2';
-import IntroScene3 from './IntroScene3';
+import GuideScene from './guideScene';
 import Recruit from './recruitScene';
 import scaleConfig from './common';
+import TeacherScene from './teacherScene';
+import LoveScene from './loveScene';
+import HistoryScene from './historyScene';
 
 let config = {
     type: Phaser.AUTO,
@@ -16,13 +15,13 @@ let config = {
     height: scaleConfig.gameheight,
     scaleMode: 0, //Phaser.ScaleManager.EXACT_FIT,
     scene: [
-        WelfareScene,
-        // LetterScene,
-        Recruit,
-        // GuideScene,
-        // IntroScene1,
-        // IntroScene2,
-        // IntroScene3
+        //WelfareScene,
+        LetterScene,
+        //Recruit,
+        GuideScene,
+        TeacherScene,
+        LoveScene,
+        HistoryScene
     ],
     physics:{
         default:'matter',
