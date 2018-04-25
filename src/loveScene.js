@@ -13,9 +13,9 @@ class LoveScene extends Phaser.Scene {
     });
   }
   preload() {
-    this.load.image('background','../assests/background.png');
-    this.load.image('coffee', '../assests/coffee.png');
-    this.load.image('leaves', '../assests/leaves.png');
+    // this.load.image('background','../assests/background.png');
+    // this.load.image('coffee', '../assests/coffee.png');
+    // this.load.image('leaves', '../assests/leaves.png');
     this.load.image('road', '../assests/road.png');
     this.load.image('tree', '../assests/tree.png');
     this.load.image('art', '../assests/art.png');
@@ -24,17 +24,17 @@ class LoveScene extends Phaser.Scene {
     this.load.image('loveWord3', '../assests/loveWord3.png');
   }
   create() {
-    let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');
-    background.scaleX = scaleConfig.gamescaleX;
-    background.scaleY = scaleConfig.gamescaleY;
+    // let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');
+    // background.scaleX = scaleConfig.gamescaleX;
+    // background.scaleY = scaleConfig.gamescaleY;
 
-    coffee = this.add.image(694 * scaleConfig.gamescaleX, 1182 * scaleConfig.gamescaleY, 'coffee');
-    coffee.scaleX = scaleConfig.gamescaleX;
-    coffee.scaleY = scaleConfig.gamescaleY;
+    // coffee = this.add.image(694 * scaleConfig.gamescaleX, 1182 * scaleConfig.gamescaleY, 'coffee');
+    // coffee.scaleX = scaleConfig.gamescaleX;
+    // coffee.scaleY = scaleConfig.gamescaleY;
 
-    leaves = this.add.image(0, 80 * scaleConfig.gamescaleY, 'leaves').setOrigin(0);
-    leaves.scaleX = scaleConfig.gamescaleX;
-    leaves.scaleY = scaleConfig.gamescaleY;
+    // leaves = this.add.image(0, 80 * scaleConfig.gamescaleY, 'leaves').setOrigin(0);
+    // leaves.scaleX = scaleConfig.gamescaleX;
+    // leaves.scaleY = scaleConfig.gamescaleY;
 
     loveWord1 = this.add.image(scaleConfig.moveX, 389 * scaleConfig.gamescaleY, 'loveWord1').setAlpha(0);
     loveWord1.scaleX = scaleConfig.gamescaleX;
@@ -69,8 +69,8 @@ class LoveScene extends Phaser.Scene {
     }, this);
   }
   update() {
-    coffee.rotation += 0.01;
-    if (leaves.rotation < 0.4) leaves.rotation += 0.005;
+    // coffee.rotation += 0.01;
+    // if (leaves.rotation < 0.4) leaves.rotation += 0.005;
 
     this.time.addEvent({
       delay: 1000,

@@ -18,9 +18,9 @@ class HistoryScene extends Phaser.Scene {
     });
   }
   preload() {
-    this.load.image('background','../assests/background.png');
-    this.load.image('coffee', '../assests/coffee.png');
-    this.load.image('leaves', '../assests/leaves.png');
+    // this.load.image('background','../assests/background.png');
+    // this.load.image('coffee', '../assests/coffee.png');
+    // this.load.image('leaves', '../assests/leaves.png');
     this.load.image('historyWord1', '../assests/historyWord1.png');
     this.load.image('historyWord2', '../assests/historyWord2.png');
     this.load.image('historyPhoto1', '../assests/historyPhoto1.png');
@@ -32,54 +32,56 @@ class HistoryScene extends Phaser.Scene {
   }
 
   create() {
-    let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');
-    background.scaleX = scaleConfig.gamescaleX;
-    background.scaleY = scaleConfig.gamescaleY;
+    // let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');
+    // background.scaleX = scaleConfig.gamescaleX;
+    // background.scaleY = scaleConfig.gamescaleY;
 
-    coffee = this.add.image(694 * scaleConfig.gamescaleX, 1182 * scaleConfig.gamescaleY, 'coffee');
-    coffee.scaleX = scaleConfig.gamescaleX;
-    coffee.scaleY = scaleConfig.gamescaleY;
+    // coffee = this.add.image(694 * scaleConfig.gamescaleX, 1182 * scaleConfig.gamescaleY, 'coffee');
+    // coffee.scaleX = scaleConfig.gamescaleX;
+    // coffee.scaleY = scaleConfig.gamescaleY;
 
-    leaves = this.add.image(0, 80 * scaleConfig.gamescaleY, 'leaves').setOrigin(0);
-    leaves.scaleX = scaleConfig.gamescaleX;
-    leaves.scaleY = scaleConfig.gamescaleY;
+    // leaves = this.add.image(0, 80 * scaleConfig.gamescaleY, 'leaves').setOrigin(0);
+    // leaves.scaleX = scaleConfig.gamescaleX;
+    // leaves.scaleY = scaleConfig.gamescaleY;
 
-    historyWord1 = this.add.image(scaleConfig.moveX, 315 * scaleConfig.gamescaleY, 'historyWord1').setAlpha(0);
+    historyWord1 = this.add.sprite(scaleConfig.moveX, 315 * scaleConfig.gamescaleY, 'historyWord1').setAlpha(0);
     historyWord1.scaleX = scaleConfig.gamescaleX;
     historyWord1.scaleY = scaleConfig.gamescaleY;
 
-    historyWord2 = this.add.image(scaleConfig.moveX, 490 * scaleConfig.gamescaleY, 'historyWord2').setAlpha(0);
+    historyWord2 = this.add.sprite(scaleConfig.moveX, 490 * scaleConfig.gamescaleY, 'historyWord2').setAlpha(0);
     historyWord2.scaleX = scaleConfig.gamescaleX;
     historyWord2.scaleY = scaleConfig.gamescaleY;
 
-    historyPhoto1 = this.add.image(338 * scaleConfig.gamescaleX, 845 * scaleConfig.gamescaleY, 'historyPhoto1').setAlpha(0);
+    historyPhoto1 = this.add.sprite(338 * scaleConfig.gamescaleX, 845 * scaleConfig.gamescaleY, 'historyPhoto1').setAlpha(0);
     historyPhoto1.scaleX = scaleConfig.gamescaleX;
     historyPhoto1.scaleY = scaleConfig.gamescaleY;
 
-    historyPhoto2 = this.add.image(375 * scaleConfig.gamescaleX, 845 * scaleConfig.gamescaleY, 'historyPhoto2').setAlpha(0);
+    historyPhoto2 = this.add.sprite(375 * scaleConfig.gamescaleX, 845 * scaleConfig.gamescaleY, 'historyPhoto2').setAlpha(0);
     historyPhoto2.scaleX = scaleConfig.gamescaleX;
     historyPhoto2.scaleY = scaleConfig.gamescaleY;
 
-    historyPhoto3 = this.add.image(scaleConfig.moveX, 845 * scaleConfig.gamescaleY, 'historyPhoto3').setAlpha(0);
+    historyPhoto3 = this.add.sprite(scaleConfig.moveX, 845 * scaleConfig.gamescaleY, 'historyPhoto3').setAlpha(0);
     historyPhoto3.scaleX = scaleConfig.gamescaleX;
     historyPhoto3.scaleY = scaleConfig.gamescaleY;
 
-    historyPhoto4 = this.add.image(scaleConfig.moveX, 902 * scaleConfig.gamescaleY, 'historyPhoto4').setAlpha(0);
+    historyPhoto4 = this.add.sprite(scaleConfig.moveX, 902 * scaleConfig.gamescaleY, 'historyPhoto4').setAlpha(0);
     historyPhoto4.scaleX = scaleConfig.gamescaleX;
     historyPhoto4.scaleY = scaleConfig.gamescaleY;
 
-    historyPhoto5 = this.add.image(390 * scaleConfig.gamescaleX, 872 * scaleConfig.gamescaleY, 'historyPhoto5').setAlpha(0);
+    historyPhoto5 = this.add.sprite(390 * scaleConfig.gamescaleX, 872 * scaleConfig.gamescaleY, 'historyPhoto5').setAlpha(0);
     historyPhoto5.scaleX = scaleConfig.gamescaleX;
     historyPhoto5.scaleY = scaleConfig.gamescaleY;
 
-    historyPhoto6 = this.add.image(338 * scaleConfig.gamescaleX, 896 * scaleConfig.gamescaleY, 'historyPhoto6').setAlpha(0);
+    historyPhoto6 = this.add.sprite(338 * scaleConfig.gamescaleX, 896 * scaleConfig.gamescaleY, 'historyPhoto6').setAlpha(0);
     historyPhoto6.scaleX = scaleConfig.gamescaleX;
     historyPhoto6.scaleY = scaleConfig.gamescaleY;
+
+
   }
 
   update() {
-    coffee.rotation += 0.01;
-    if (leaves.rotation < 0.4) leaves.rotation += 0.005;
+    // coffee.rotation += 0.01;
+    // if (leaves.rotation < 0.4) leaves.rotation += 0.005;
     
 
     this.time.addEvent({

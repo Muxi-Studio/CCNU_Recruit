@@ -39,40 +39,47 @@ class GuideScene extends Phaser.Scene {
     leaves.scaleY = scaleConfig.gamescaleY;
 
     // 169 * scaleConfig.gamescaleX
-    dinner = this.add.image(0, 533 * scaleConfig.gamescaleY, 'dinner').setOrigin(0);
+    dinner = this.add.sprite(0, 533 * scaleConfig.gamescaleY, 'dinner').setOrigin(0);
     dinner.setAlpha(0);
     dinner.scaleX = scaleConfig.gamescaleX;
     dinner.scaleY = scaleConfig.gamescaleY;
 
     // 600 * scaleConfig.gamescaleX,
-    packageImage = this.add.image(639 * scaleConfig.gamescaleX, 820 * scaleConfig.gamescaleY, 'packageImage').setOrigin(0);
+    packageImage = this.add.sprite(639 * scaleConfig.gamescaleX, 820 * scaleConfig.gamescaleY, 'packageImage').setOrigin(0);
     packageImage.setAlpha(0);
     packageImage.scaleX = scaleConfig.gamescaleX;
     packageImage.scaleY = scaleConfig.gamescaleY;
 
-    northGate = this.add.image(0, 966 * scaleConfig.gamescaleY, 'northGate').setOrigin(0);
+    northGate = this.add.sprite(0, 966 * scaleConfig.gamescaleY, 'northGate').setOrigin(0);
     northGate.setAlpha(0);
     northGate.scaleX = scaleConfig.gamescaleX;
     northGate.scaleY = scaleConfig.gamescaleY;
 
-    guideWord1 = this.add.image(scaleConfig.moveX, 386 * scaleConfig.gamescaleY, 'guideWord1').setAlpha(0);
+    guideWord1 = this.add.sprite(scaleConfig.moveX, 386 * scaleConfig.gamescaleY, 'guideWord1').setAlpha(0);
     guideWord1.scaleX = scaleConfig.gamescaleX;
     guideWord1.scaleY = scaleConfig.gamescaleY;
 
-    guideWord2 = this.add.image(scaleConfig.moveX, 686 * scaleConfig.gamescaleY, 'guideWord2').setAlpha(0);
+    guideWord2 = this.add.sprite(scaleConfig.moveX, 686 * scaleConfig.gamescaleY, 'guideWord2').setAlpha(0);
     guideWord2.scaleX = scaleConfig.gamescaleX;
     guideWord2.scaleY = scaleConfig.gamescaleY;
 
-    guideWord3 = this.add.image(scaleConfig.moveX, 962 * scaleConfig.gamescaleY, 'guideWord3').setAlpha(0);
+    guideWord3 = this.add.sprite(scaleConfig.moveX, 962 * scaleConfig.gamescaleY, 'guideWord3').setAlpha(0);
     guideWord3.scaleX = scaleConfig.gamescaleX;
     guideWord3.scaleY = scaleConfig.gamescaleY;
 
-    guideWord4 = this.add.image(scaleConfig.moveX, 1160 * scaleConfig.gamescaleY, 'guideWord4').setAlpha(0);
+    guideWord4 = this.add.sprite(scaleConfig.moveX, 1160 * scaleConfig.gamescaleY, 'guideWord4').setAlpha(0);
     guideWord4.scaleX = scaleConfig.gamescaleX;
     guideWord4.scaleY = scaleConfig.gamescaleY;
     
     this.input.once('pointerdown', function () {
-      this.scene.start('TeacherScene');
+      dinner.destroy();
+      packageImage.destroy();
+      northGate.destroy();
+      guideWord1.destroy();
+      guideWord2.destroy();
+      guideWord3.destroy();
+      guideWord4.destroy();
+      this.scene.launch('TeacherScene');
     }, this);
   }
   update() {

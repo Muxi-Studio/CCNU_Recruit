@@ -14,52 +14,56 @@ class TeacherScene extends Phaser.Scene {
     });
   }
   preload() {
-    this.load.image('background','../assests/background.png');
-    this.load.image('coffee', '../assests/coffee.png');
-    this.load.image('leaves', '../assests/leaves.png');
+    // this.load.image('background','../assests/background.png');
+    // this.load.image('coffee', '../assests/coffee.png');
+    // this.load.image('leaves', '../assests/leaves.png');
     this.load.image('hat', '../assests/hat.png');
     this.load.image('teacherWord1', '../assests/teacherWord1.png');
     this.load.image('teacherWord2', '../assests/teacherWord2.png');
     this.load.image('teacherWord3', '../assests/teacherWord3.png');
   }
   create() {
-    let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');
-    background.scaleX = scaleConfig.gamescaleX;
-    background.scaleY = scaleConfig.gamescaleY;
+    // let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');
+    // background.scaleX = scaleConfig.gamescaleX;
+    // background.scaleY = scaleConfig.gamescaleY;
 
-    coffee = this.add.image(694 * scaleConfig.gamescaleX, 1182 * scaleConfig.gamescaleY, 'coffee');
-    coffee.scaleX = scaleConfig.gamescaleX;
-    coffee.scaleY = scaleConfig.gamescaleY;
+    // coffee = this.add.image(694 * scaleConfig.gamescaleX, 1182 * scaleConfig.gamescaleY, 'coffee');
+    // coffee.scaleX = scaleConfig.gamescaleX;
+    // coffee.scaleY = scaleConfig.gamescaleY;
 
-    leaves = this.add.image(0, 80 * scaleConfig.gamescaleY, 'leaves').setOrigin(0);
-    leaves.scaleX = scaleConfig.gamescaleX;
-    leaves.scaleY = scaleConfig.gamescaleY;    
+    // leaves = this.add.image(0, 80 * scaleConfig.gamescaleY, 'leaves').setOrigin(0);
+    // leaves.scaleX = scaleConfig.gamescaleX;
+    // leaves.scaleY = scaleConfig.gamescaleY;    
 
-    let hat = this.add.image(230 * scaleConfig.gamescaleX, 1063 * scaleConfig.gamescaleY, 'hat');
+    var hat = this.add.sprite(230 * scaleConfig.gamescaleX, 1063 * scaleConfig.gamescaleY, 'hat');
     hat.scaleX = scaleConfig.gamescaleX;
     hat.scaleY = scaleConfig.gamescaleY;
 
-    teacherWord1 = this.add.image(scaleConfig.moveX, 349 * scaleConfig.gamescaleY, 'teacherWord1').setAlpha(0);
+    teacherWord1 = this.add.sprite(scaleConfig.moveX, 349 * scaleConfig.gamescaleY, 'teacherWord1').setAlpha(0);
     teacherWord1.scaleX = scaleConfig.gamescaleX;
     teacherWord1.scaleY = scaleConfig.gamescaleY;
 
-    teacherWord2 = this.add.image(scaleConfig.moveX, 685 * scaleConfig.gamescaleY, 'teacherWord2').setAlpha(0);
+    teacherWord2 = this.add.sprite(scaleConfig.moveX, 685 * scaleConfig.gamescaleY, 'teacherWord2').setAlpha(0);
     teacherWord2.scaleX = scaleConfig.gamescaleX;
     teacherWord2.scaleY = scaleConfig.gamescaleY;
 
-    teacherWord3 = this.add.image(scaleConfig.moveX, 1044 * scaleConfig.gamescaleY, 'teacherWord3').setAlpha(0);
+    teacherWord3 = this.add.sprite(scaleConfig.moveX, 1044 * scaleConfig.gamescaleY, 'teacherWord3').setAlpha(0);
     teacherWord3.scaleX = scaleConfig.gamescaleX;
     teacherWord3.scaleY = scaleConfig.gamescaleY;
 
 
     this.input.on('pointerdown', function () {
-      this.scene.start('LoveScene');
+      hat.destroy();
+      teacherWord1.destroy();
+      teacherWord2.destroy();
+      teacherWord3.destroy();
+      this.scene.launch('LoveScene');
     }, this);
   }
 
   update() {
-    coffee.rotation += 0.01;
-    if (leaves.rotation < 0.4) leaves.rotation += 0.005;
+    // coffee.rotation += 0.01;
+    // if (leaves.rotation < 0.4) leaves.rotation += 0.005;
     
 
     this.time.addEvent({

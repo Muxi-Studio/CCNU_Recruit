@@ -20,36 +20,43 @@ class LetterScene extends Phaser.Scene {
     this.load.image('letterCoverUp', '../assests/letterCoverUp.png');
   }
   create() {
-    let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'letterBackground');
+    var background = this.add.sprite(scaleConfig.moveX, scaleConfig.moveY, 'letterBackground');
     background.scaleX = scaleConfig.gamescaleX;
     background.scaleY = scaleConfig.gamescaleY;
     
-    arrow = this.add.image(scaleConfig.moveX, 1142 * scaleConfig.gamescaleY, 'arrow').setAlpha(0);
+    arrow = this.add.sprite(scaleConfig.moveX, 1142 * scaleConfig.gamescaleY, 'arrow').setAlpha(0);
     arrow.scaleX = scaleConfig.gamescaleX;
     arrow.scaleY = scaleConfig.gamescaleY;
 
-    let letterCoverUp = this.add.image(scaleConfig.moveX, 530 * scaleConfig.gamescaleY, 'letterCoverUp');
+    let letterCoverUp = this.add.sprite(scaleConfig.moveX, 530 * scaleConfig.gamescaleY, 'letterCoverUp');
     letterCoverUp.scaleX = scaleConfig.gamescaleX;
     letterCoverUp.scaleY = scaleConfig.gamescaleY;
 
-    letter = this.add.image(scaleConfig.moveX, 1000 * scaleConfig.gamescaleY, 'letter');
+    letter = this.add.sprite(scaleConfig.moveX, 1000 * scaleConfig.gamescaleY, 'letter');
     letter.scaleX = scaleConfig.gamescaleX;
     letter.scaleY = scaleConfig.gamescaleY;
 
-    let letterCover = this.add.image(scaleConfig.moveX, 800 * scaleConfig.gamescaleY, 'letterCover');
+    var letterCover = this.add.sprite(scaleConfig.moveX, 800 * scaleConfig.gamescaleY, 'letterCover');
     letterCover.scaleX = scaleConfig.gamescaleX;
     letterCover.scaleY = scaleConfig.gamescaleY;
 
-    let camera = this.add.image(40, 1000 * scaleConfig.gamescaleY, 'camera');
+    let camera = this.add.sprite(40, 1000 * scaleConfig.gamescaleY, 'camera');
     camera.scaleX = scaleConfig.gamescaleX;
     camera.scaleY = scaleConfig.gamescaleY;
 
-    start = this.add.image(scaleConfig.moveX, 1062 * scaleConfig.gamescaleY, 'start').setAlpha(0);
+    start = this.add.sprite(scaleConfig.moveX, 1062 * scaleConfig.gamescaleY, 'start').setAlpha(0);
     start.scaleX = scaleConfig.gamescaleX;
     start.scaleY = scaleConfig.gamescaleY;
 
     this.input.once('pointerdown', function () {
-      this.scene.start('GuideScene');
+      background.destroy();
+      arrow.destroy();
+      letter.destroy();
+      letterCover.destroy();
+      letterCoverUp.destroy();
+      camera.destroy();
+      start.destroy();
+      this.scene.launch('GuideScene');
     }, this);
   }
   update() {
