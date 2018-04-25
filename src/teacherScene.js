@@ -14,13 +14,13 @@ class TeacherScene extends Phaser.Scene {
     });
   }
   preload() {
-    // this.load.image('background','../assests/background.png');
-    // this.load.image('coffee', '../assests/coffee.png');
-    // this.load.image('leaves', '../assests/leaves.png');
-    this.load.image('hat', '../assests/hat.png');
-    this.load.image('teacherWord1', '../assests/teacherWord1.png');
-    this.load.image('teacherWord2', '../assests/teacherWord2.png');
-    this.load.image('teacherWord3', '../assests/teacherWord3.png');
+    // this.load.image('background','../assets/background.png');
+    // this.load.image('coffee', '../assets/coffee.png');
+    // this.load.image('leaves', '../assets/leaves.png');
+    this.load.image('hat', '../assets/hat.png');
+    this.load.image('teacherWord1', '../assets/teacherWord1.png');
+    this.load.image('teacherWord2', '../assets/teacherWord2.png');
+    this.load.image('teacherWord3', '../assets/teacherWord3.png');
   }
   create() {
     // let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');

@@ -11,13 +11,13 @@ class LetterScene extends Phaser.Scene {
     });
   }
   preload() {
-    this.load.image('letterBackground','../assests/letterBackground.png');
-    this.load.image('letterCover', '../assests/letterCover.png');
-    this.load.image('letter', '../assests/letter.png');
-    this.load.image('arrow', '../assests/arrow.png');
-    this.load.image('camera', '../assests/camera.png');
-    this.load.image('start', '../assests/startRead.png');
-    this.load.image('letterCoverUp', '../assests/letterCoverUp.png');
+    this.load.image('letterBackground','../assets/letterBackground.png');
+    this.load.image('letterCover', '../assets/letterCover.png');
+    this.load.image('letter', '../assets/letter.png');
+    this.load.image('arrow', '../assets/arrow.png');
+    this.load.image('camera', '../assets/camera.png');
+    this.load.image('start', '../assets/startRead.png');
+    this.load.image('letterCoverUp', '../assets/letterCoverUp.png');
   }
   create() {
     var background = this.add.sprite(scaleConfig.moveX, scaleConfig.moveY, 'letterBackground');

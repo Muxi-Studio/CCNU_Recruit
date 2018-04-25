@@ -18,17 +18,17 @@ class HistoryScene extends Phaser.Scene {
     });
   }
   preload() {
-    // this.load.image('background','../assests/background.png');
-    // this.load.image('coffee', '../assests/coffee.png');
-    // this.load.image('leaves', '../assests/leaves.png');
-    this.load.image('historyWord1', '../assests/historyWord1.png');
-    this.load.image('historyWord2', '../assests/historyWord2.png');
-    this.load.image('historyPhoto1', '../assests/historyPhoto1.png');
-    this.load.image('historyPhoto2', '../assests/historyPhoto2.png');
-    this.load.image('historyPhoto3', '../assests/historyPhoto3.png');
-    this.load.image('historyPhoto4', '../assests/historyPhoto4.png');
-    this.load.image('historyPhoto5', '../assests/historyPhoto5.png');
-    this.load.image('historyPhoto6', '../assests/historyPhoto6.png');
+    // this.load.image('background','../assets/background.png');
+    // this.load.image('coffee', '../assets/coffee.png');
+    // this.load.image('leaves', '../assets/leaves.png');
+    this.load.image('historyWord1', '../assets/historyWord1.png');
+    this.load.image('historyWord2', '../assets/historyWord2.png');
+    this.load.image('historyPhoto1', '../assets/historyPhoto1.png');
+    this.load.image('historyPhoto2', '../assets/historyPhoto2.png');
+    this.load.image('historyPhoto3', '../assets/historyPhoto3.png');
+    this.load.image('historyPhoto4', '../assets/historyPhoto4.png');
+    this.load.image('historyPhoto5', '../assets/historyPhoto5.png');
+    this.load.image('historyPhoto6', '../assets/historyPhoto6.png');
   }
 
   create() {

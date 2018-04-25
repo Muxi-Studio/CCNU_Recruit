@@ -15,9 +15,7 @@ let config = {
     height: scaleConfig.gameheight,
     scaleMode: 0, //Phaser.ScaleManager.EXACT_FIT,
     scene: [
-        //WelfareScene,
         LetterScene,
-        //Recruit,
         GuideScene,
         TeacherScene,
         LoveScene,

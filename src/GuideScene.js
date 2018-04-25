@@ -14,17 +14,17 @@ class GuideScene extends Phaser.Scene {
     });
   }
   preload() {
-    this.load.audio('bgMusic', '../assests/bgMusic.mp3');
-    this.load.image('background','../assests/background.png');
-    this.load.image('coffee', '../assests/coffee.png');
-    this.load.image('leaves', '../assests/leaves.png');
-    this.load.image('dinner', '../assests/eat.png');
-    this.load.image('packageImage', '../assests/packageImage.png');
-    this.load.image('northGate', '../assests/northGate.png');
-    this.load.image('guideWord1', '../assests/guideword1.png');
-    this.load.image('guideWord2', '../assests/guideword2.png');
-    this.load.image('guideWord3', '../assests/guideword3.png');
-    this.load.image('guideWord4', '../assests/guideword4.png');
+    this.load.audio('bgMusic', '../assets/bgMusic.mp3');
+    this.load.image('background','../assets/background.png');
+    this.load.image('coffee', '../assets/coffee.png');
+    this.load.image('leaves', '../assets/leaves.png');
+    this.load.image('dinner', '../assets/eat.png');
+    this.load.image('packageImage', '../assets/packageImage.png');
+    this.load.image('northGate', '../assets/northGate.png');
+    this.load.image('guideWord1', '../assets/guideword1.png');
+    this.load.image('guideWord2', '../assets/guideword2.png');
+    this.load.image('guideWord3', '../assets/guideword3.png');
+    this.load.image('guideWord4', '../assets/guideword4.png');
   }
   create() {
     var bgMusic = this.sound.add('bgMusic');
@@ -74,7 +74,7 @@ class GuideScene extends Phaser.Scene {
     guideWord4 = this.add.sprite(scaleConfig.moveX, 1160 * scaleConfig.gamescaleY, 'guideWord4').setAlpha(0);
     guideWord4.scaleX = scaleConfig.gamescaleX;
     guideWord4.scaleY = scaleConfig.gamescaleY;
-    
+
     this.input.once('pointerdown', function () {
       dinner.destroy();
       packageImage.destroy();

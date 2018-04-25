@@ -13,15 +13,15 @@ class LoveScene extends Phaser.Scene {
     });
   }
   preload() {
-    // this.load.image('background','../assests/background.png');
-    // this.load.image('coffee', '../assests/coffee.png');
-    // this.load.image('leaves', '../assests/leaves.png');
-    this.load.image('road', '../assests/road.png');
-    this.load.image('tree', '../assests/tree.png');
-    this.load.image('art', '../assests/art.png');
-    this.load.image('loveWord1', '../assests/loveWord1.png');
-    this.load.image('loveWord2', '../assests/loveWord2.png');
-    this.load.image('loveWord3', '../assests/loveWord3.png');
+    // this.load.image('background','../assets/background.png');
+    // this.load.image('coffee', '../assets/coffee.png');
+    // this.load.image('leaves', '../assets/leaves.png');
+    this.load.image('road', '../assets/road.png');
+    this.load.image('tree', '../assets/tree.png');
+    this.load.image('art', '../assets/art.png');
+    this.load.image('loveWord1', '../assets/loveWord1.png');
+    this.load.image('loveWord2', '../assets/loveWord2.png');
+    this.load.image('loveWord3', '../assets/loveWord3.png');
   }
   create() {
     // let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');
