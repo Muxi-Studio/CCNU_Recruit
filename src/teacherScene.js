@@ -14,13 +14,13 @@ class TeacherScene extends Phaser.Scene {
     });
   }
   preload() {
-    // this.load.image('background','../assets/background.png');
-    // this.load.image('coffee', '../assets/coffee.png');
-    // this.load.image('leaves', '../assets/leaves.png');
-    this.load.image('hat', '../assets/hat.png');
-    this.load.image('teacherWord1', '../assets/teacherWord1.png');
-    this.load.image('teacherWord2', '../assets/teacherWord2.png');
-    this.load.image('teacherWord3', '../assets/teacherWord3.png');
+    // this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
+    // this.load.image('coffee', 'http://p688ihx0v.bkt.clouddn.com/coffee.png');
+    // this.load.image('leaves', 'http://p688ihx0v.bkt.clouddn.com/leaves.png');
+    this.load.image('hat', 'http://p688ihx0v.bkt.clouddn.com/hat.png');
+    this.load.image('teacherWord1', 'http://p688ihx0v.bkt.clouddn.com/teacherWord1.png');
+    this.load.image('teacherWord2', 'http://p688ihx0v.bkt.clouddn.com/teacherWord2.png');
+    this.load.image('teacherWord3', 'http://p688ihx0v.bkt.clouddn.com/teacherWord3.png');
   }
   create() {
     // let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');

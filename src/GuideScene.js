@@ -1,6 +1,5 @@
 import Animated from 'phaser-animated-tiles';
 import scaleConfig from './common';
-import LetterScene from './LetterScene';
 
 var coffee, leaves, dinner, packageImage, northGate, guideWord1, guideWord2, guideWord3, guideWord4;
 var alpha1 = 0;
@@ -16,17 +15,17 @@ class GuideScene extends Phaser.Scene {
     });
   }
   preload() {
-    this.load.audio('bgMusic', '../assets/bgMusic.mp3');
-    this.load.image('background','../assets/background.png');
-    this.load.image('coffee', '../assets/coffee.png');
-    this.load.image('leaves', '../assets/leaves.png');
-    this.load.image('dinner', '../assets/eat.png');
-    this.load.image('packageImage', '../assets/packageImage.png');
-    this.load.image('northGate', '../assets/northGate.png');
-    this.load.image('guideWord1', '../assets/guideword1.png');
-    this.load.image('guideWord2', '../assets/guideword2.png');
-    this.load.image('guideWord3', '../assets/guideword3.png');
-    this.load.image('guideWord4', '../assets/guideword4.png');
+    this.load.audio('bgMusic', 'http://p688ihx0v.bkt.clouddn.com/bgMusic.mp3');
+    this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
+    this.load.image('coffee', 'http://p688ihx0v.bkt.clouddn.com/coffee.png');
+    this.load.image('leaves', 'http://p688ihx0v.bkt.clouddn.com/leaves.png');
+    this.load.image('dinner', 'http://p688ihx0v.bkt.clouddn.com/eat.png');
+    this.load.image('packageImage', 'http://p688ihx0v.bkt.clouddn.com/packageImage.png');
+    this.load.image('northGate', 'http://p688ihx0v.bkt.clouddn.com/northGate.png');
+    this.load.image('guideWord1', 'http://p688ihx0v.bkt.clouddn.com/guideword1.png');
+    this.load.image('guideWord2', 'http://p688ihx0v.bkt.clouddn.com/guideword2.png');
+    this.load.image('guideWord3', 'http://p688ihx0v.bkt.clouddn.com/guideword3.png');
+    this.load.image('guideWord4', 'http://p688ihx0v.bkt.clouddn.com/guideword4.png');
   }
   
   create() {

@@ -1,14 +1,12 @@
 import 'phaser';
 import WelfareScene from './welfareScene';
-import LetterScene from './LetterScene';
+import LetterScene from './letterScene';
 import GuideScene from './guideScene';
 import scaleConfig from './common';
 import TeacherScene from './teacherScene';
 import LoveScene from './loveScene';
 import HistoryScene from './historyScene';
-//import GuideScene from './GuideScene';
 import Recruit from './recruitScene';
-import scaleConfig from './common';
 import childrenScene from './childrenScene'
 import QRcodeScene from './QRcodeScene';
 
@@ -23,13 +21,10 @@ let config = {
         GuideScene,
         TeacherScene,
         LoveScene,
-        HistoryScenem,
-        QRcodeScene
-       // childrenScene,
-       // WelfareScene,
-        // LetterScene,
-        // Recruit,
-        // GuideScene,
+        HistoryScene,
+        childrenScene,
+        WelfareScene,
+        QRcodeScene,
     ],
     physics:{
         default:'matter',

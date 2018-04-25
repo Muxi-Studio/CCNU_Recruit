@@ -13,15 +13,15 @@ class LoveScene extends Phaser.Scene {
     });
   }
   preload() {
-    // this.load.image('background','../assets/background.png');
-    // this.load.image('coffee', '../assets/coffee.png');
-    // this.load.image('leaves', '../assets/leaves.png');
-    this.load.image('road', '../assets/road.png');
-    this.load.image('tree', '../assets/tree.png');
-    this.load.image('art', '../assets/art.png');
-    this.load.image('loveWord1', '../assets/loveWord1.png');
-    this.load.image('loveWord2', '../assets/loveWord2.png');
-    this.load.image('loveWord3', '../assets/loveWord3.png');
+    // this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
+    // this.load.image('coffee', 'http://p688ihx0v.bkt.clouddn.com/coffee.png');
+    // this.load.image('leaves', 'http://p688ihx0v.bkt.clouddn.com/leaves.png');
+    this.load.image('road', 'http://p688ihx0v.bkt.clouddn.com/road.png');
+    this.load.image('tree', 'http://p688ihx0v.bkt.clouddn.com/tree.png');
+    this.load.image('art', 'http://p688ihx0v.bkt.clouddn.com/art.png');
+    this.load.image('loveWord1', 'http://p688ihx0v.bkt.clouddn.com/loveWord1.png');
+    this.load.image('loveWord2', 'http://p688ihx0v.bkt.clouddn.com/loveWord2.png');
+    this.load.image('loveWord3', 'http://p688ihx0v.bkt.clouddn.com/loveWord3.png');
   }
   create() {
     // let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');

@@ -9,12 +9,12 @@ class childrenScene extends Phaser.Scene {
         })
     }
     preload() {
-        this.load.image('background','../assets/background.png');
-        this.load.image('coffee', '../assets/coffee.png');
-        this.load.image('leaves', '../assets/leaves.png');
-        this.load.image('school-house','../assets/welfareSchoolHouse.png');
-        this.load.image('children-word1','../assets/children-word1.png');
-        this.load.image('children-word2','../assets/children-word2.png');
+        this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
+        this.load.image('coffee', 'http://p688ihx0v.bkt.clouddn.com/coffee.png');
+        this.load.image('leaves', 'http://p688ihx0v.bkt.clouddn.com/leaves.png');
+        this.load.image('school-house','http://p688ihx0v.bkt.clouddn.com/welfareSchoolHouse.png');
+        this.load.image('children-word1','http://p688ihx0v.bkt.clouddn.com/children-word1.png');
+        this.load.image('children-word2','http://p688ihx0v.bkt.clouddn.com/children-word2.png');
     }
     create(){
     background = this.add.sprite(scaleConfig.moveX, scaleConfig.moveY, 'background');

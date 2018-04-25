@@ -13,13 +13,13 @@ class futureScene extends Phaser.Scene{
     }
 
     preload() {
-        this.load.image('background','../assets/background.png');
-        this.load.image('coffee','../assets/coffee.png');
-        this.load.image('water-mark','../assets/waterMark.png');
-        this.load.image('school-gate','../assets/schoolGate.png');
-        this.load.image('future-word1','../assets/future-word1.png');
-        this.load.image('future-word2','../assets/future-word2.png');
-        this.load.image('future-word3','../assets/future-word3.png');
+        this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
+        this.load.image('coffee','http://p688ihx0v.bkt.clouddn.com/coffee.png');
+        this.load.image('water-mark','http://p688ihx0v.bkt.clouddn.com/waterMark.png');
+        this.load.image('school-gate','http://p688ihx0v.bkt.clouddn.com/schoolGate.png');
+        this.load.image('future-word1','http://p688ihx0v.bkt.clouddn.com/future-word1.png');
+        this.load.image('future-word2','http://p688ihx0v.bkt.clouddn.com/future-word2.png');
+        this.load.image('future-word3','http://p688ihx0v.bkt.clouddn.com/future-word3.png');
 
     }
     create() {

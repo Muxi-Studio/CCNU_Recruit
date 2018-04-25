@@ -14,14 +14,14 @@ class QRcodeScene extends Phaser.Scene{
        
     }
     preload() {
-        this.load.image('background','../assets/background.png');
-        this.load.image('coffee','../assets/coffee.png');
-        this.load.image('leaves','../assets/leaves.png');
-        this.load.image('QRcode','../assets/QRcode.png');
-        this.load.image('QRbell','../assets/QRbell.png');
-        this.load.image('QRword1','../assets/QRcode-word1.png');
-        this.load.image('QRword2','../assets/QRcode-word2.png');
-        this.load.image('QRword3','../assets/QRcode-word3.png');
+        this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
+        this.load.image('coffee','http://p688ihx0v.bkt.clouddn.com/coffee.png');
+        this.load.image('leaves','http://p688ihx0v.bkt.clouddn.com/leaves.png');
+        this.load.image('QRcode','http://p688ihx0v.bkt.clouddn.com/QRcode.png');
+        this.load.image('QRbell','http://p688ihx0v.bkt.clouddn.com/QRbell.png');
+        this.load.image('QRword1','http://p688ihx0v.bkt.clouddn.com/QRcode-word1.png');
+        this.load.image('QRword2','http://p688ihx0v.bkt.clouddn.com/QRcode-word2.png');
+        this.load.image('QRword3','http://p688ihx0v.bkt.clouddn.com/QRcode-word3.png');
     }
     create() {
         //设置位置和图片缩放比例

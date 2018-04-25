@@ -12,7 +12,7 @@ class LetterScene extends Phaser.Scene {
   }
   preload() {
 
-    this.load.image('loading-background','../assets/loading-background.png');
+    this.load.image('loading-background','http://p688ihx0v.bkt.clouddn.com/loading-background.png');
     let loadingBack = this.add.image(scaleConfig.moveX,scaleConfig.moveY,'loading-background');
     loadingBack.scaleX = scaleConfig.gamescaleX;
     loadingBack.scaleY = scaleConfig.gamescaleY;
@@ -40,13 +40,13 @@ class LetterScene extends Phaser.Scene {
   // },this);
    
 
-    this.load.image('letterBackground','../assets/letterBackground.png');
-    this.load.image('letterCover', '../assets/letterCover.png');
-    this.load.image('letter', '../assets/letter.png');
-    this.load.image('arrow', '../assets/arrow.png');
-    this.load.image('camera', '../assets/camera.png');
-    this.load.image('start', '../assets/startRead.png');
-    this.load.image('letterCoverUp', '../assets/letterCoverUp.png');
+    this.load.image('letterBackground','http://p688ihx0v.bkt.clouddn.com/letterBackground.png');
+    this.load.image('letterCover', 'http://p688ihx0v.bkt.clouddn.com/letterCover.png');
+    this.load.image('letter', 'http://p688ihx0v.bkt.clouddn.com/letter.png');
+    this.load.image('arrow', 'http://p688ihx0v.bkt.clouddn.com/arrow.png');
+    this.load.image('camera', 'http://p688ihx0v.bkt.clouddn.com/camera.png');
+    this.load.image('start', 'http://p688ihx0v.bkt.clouddn.com/startRead.png');
+    this.load.image('letterCoverUp', 'http://p688ihx0v.bkt.clouddn.com/letterCoverUp.png');
   }
   create() {
     var background = this.add.sprite(scaleConfig.moveX, scaleConfig.moveY, 'letterBackground');

@@ -1,7 +1,7 @@
 import Animated from 'phaser-animated-tiles';
 import scaleConfig from './common';
 
-var coffee, leaves, historyWord1, historyWord2, historyWord3, historyPhoto1, historyPhoto2, historyPhoto3, historyPhoto4,historyPhoto5,historyPhoto6;
+var coffee, leaves, historyWord1, historyWord2, historyPhoto1, historyPhoto2, historyPhoto3, historyPhoto4,historyPhoto5,historyPhoto6;
 var alpha1 = 0;
 var alpha2 = 0;
 var alpha3 = 0;
@@ -18,17 +18,17 @@ class HistoryScene extends Phaser.Scene {
     });
   }
   preload() {
-    // this.load.image('background','../assets/background.png');
-    // this.load.image('coffee', '../assets/coffee.png');
-    // this.load.image('leaves', '../assets/leaves.png');
-    this.load.image('historyWord1', '../assets/historyWord1.png');
-    this.load.image('historyWord2', '../assets/historyWord2.png');
-    this.load.image('historyPhoto1', '../assets/historyPhoto1.png');
-    this.load.image('historyPhoto2', '../assets/historyPhoto2.png');
-    this.load.image('historyPhoto3', '../assets/historyPhoto3.png');
-    this.load.image('historyPhoto4', '../assets/historyPhoto4.png');
-    this.load.image('historyPhoto5', '../assets/historyPhoto5.png');
-    this.load.image('historyPhoto6', '../assets/historyPhoto6.png');
+    // this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
+    // this.load.image('coffee', 'http://p688ihx0v.bkt.clouddn.com/coffee.png');
+    // this.load.image('leaves', 'http://p688ihx0v.bkt.clouddn.com/leaves.png');
+    this.load.image('historyWord1', 'http://p688ihx0v.bkt.clouddn.com/historyWord1.png');
+    this.load.image('historyWord2', 'http://p688ihx0v.bkt.clouddn.com/historyWord2.png');
+    this.load.image('historyPhoto1', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto1.png');
+    this.load.image('historyPhoto2', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto2.png');
+    this.load.image('historyPhoto3', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto3.png');
+    this.load.image('historyPhoto4', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto4.png');
+    this.load.image('historyPhoto5', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto5.png');
+    this.load.image('historyPhoto6', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto6.png');
   }
 
   create() {
@@ -76,7 +76,17 @@ class HistoryScene extends Phaser.Scene {
     historyPhoto6.scaleX = scaleConfig.gamescaleX;
     historyPhoto6.scaleY = scaleConfig.gamescaleY;
 
-
+    this.input.once('pointerdown', function () {
+      historyWord1.destroy();
+      historyWord2.destroy();
+      historyPhoto1.destroy();
+      historyPhoto2.destroy();
+      historyPhoto3.destroy();
+      historyPhoto4.destroy();
+      historyPhoto5.destroy();
+      historyPhoto6.destroy();
+      this.scene.launch('childrenScene');
+    }, this);
   }
 
   update() {

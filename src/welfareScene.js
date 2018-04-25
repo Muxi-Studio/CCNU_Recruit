@@ -11,11 +11,11 @@ class welfareScene extends Phaser.Scene{
        
     }
     preload() {
-        this.load.image('all-background','../assets/background.png');
-        this.load.image('all-coffee','../assets/coffee.png');
-        this.load.image('all-leaves','../assets/leaves.png');
-        this.load.image('welfare-gold','../assets/welfareGold.png');
-        this.load.image('welfare-word','../assets/welfareWord.png');
+        this.load.image('all-background','http://p688ihx0v.bkt.clouddn.com/background.png');
+        this.load.image('all-coffee','http://p688ihx0v.bkt.clouddn.com/coffee.png');
+        this.load.image('all-leaves','http://p688ihx0v.bkt.clouddn.com/leaves.png');
+        this.load.image('welfare-gold','http://p688ihx0v.bkt.clouddn.com/welfareGold.png');
+        this.load.image('welfare-word','http://p688ihx0v.bkt.clouddn.com/welfareWord.png');
     }
     create() {
         //设置位置和图片缩放比例
