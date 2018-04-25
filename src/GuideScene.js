@@ -14,11 +14,12 @@ class GuideScene extends Phaser.Scene {
     });
   }
   preload() {
+    this.load.audio('bgMusic', '../assests/bgMusic.mp3');
     this.load.image('background','../assests/background.png');
     this.load.image('coffee', '../assests/coffee.png');
     this.load.image('leaves', '../assests/leaves.png');
     this.load.image('dinner', '../assests/eat.png');
-    this.load.image('packageImage', '../assests/package.png');
+    this.load.image('packageImage', '../assests/packageImage.png');
     this.load.image('northGate', '../assests/northGate.png');
     this.load.image('guideWord1', '../assests/guideword1.png');
     this.load.image('guideWord2', '../assests/guideword2.png');
@@ -26,6 +27,9 @@ class GuideScene extends Phaser.Scene {
     this.load.image('guideWord4', '../assests/guideword4.png');
   }
   create() {
+    var bgMusic = this.sound.add('bgMusic');
+    bgMusic.play();
+
     let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');
     background.scaleX = scaleConfig.gamescaleX;
     background.scaleY = scaleConfig.gamescaleY;

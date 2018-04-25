@@ -36,36 +36,41 @@ class LoveScene extends Phaser.Scene {
     // leaves.scaleX = scaleConfig.gamescaleX;
     // leaves.scaleY = scaleConfig.gamescaleY;
 
-    loveWord1 = this.add.image(scaleConfig.moveX, 389 * scaleConfig.gamescaleY, 'loveWord1').setAlpha(0);
+    loveWord1 = this.add.sprite(scaleConfig.moveX, 389 * scaleConfig.gamescaleY, 'loveWord1').setAlpha(0);
     loveWord1.scaleX = scaleConfig.gamescaleX;
     loveWord1.scaleY = scaleConfig.gamescaleY;
 
-    road = this.add.image(0, 0, 'road').setOrigin(0);
+    road = this.add.sprite(0, 0, 'road').setOrigin(0);
     road.setAlpha(0);
     road.scaleX = scaleConfig.gamescaleX;
     road.scaleY = scaleConfig.gamescaleY;
 
-    loveWord2 = this.add.image(scaleConfig.moveX, 715 * scaleConfig.gamescaleY, 'loveWord2').setAlpha(0);
+    loveWord2 = this.add.sprite(scaleConfig.moveX, 715 * scaleConfig.gamescaleY, 'loveWord2').setAlpha(0);
     loveWord2.scaleX = scaleConfig.gamescaleX;
     loveWord2.scaleY = scaleConfig.gamescaleY;
 
-    art = this.add.image(545 * scaleConfig.gamescaleX, 0, 'art').setOrigin(0);
+    art = this.add.sprite(545 * scaleConfig.gamescaleX, 0, 'art').setOrigin(0);
     art.setAlpha(0);
     art.scaleX = scaleConfig.gamescaleX;
     art.scaleY = scaleConfig.gamescaleY;
 
-    loveWord3 = this.add.image(scaleConfig.moveX, 1010 * scaleConfig.gamescaleY, 'loveWord3').setAlpha(0);
+    loveWord3 = this.add.sprite(scaleConfig.moveX, 1010 * scaleConfig.gamescaleY, 'loveWord3').setAlpha(0);
     loveWord3.scaleX = scaleConfig.gamescaleX;
     loveWord3.scaleY = scaleConfig.gamescaleY;
 
-
-    tree = this.add.image(0, 0, 'tree').setOrigin(0);
+    tree = this.add.sprite(0, 0, 'tree').setOrigin(0);
     tree.setAlpha(0);
     tree.scaleX = scaleConfig.gamescaleX;
     tree.scaleY = scaleConfig.gamescaleY;
 
     this.input.once('pointerdown', function () {
-      this.scene.start('HistoryScene');
+      loveWord1.destroy();
+      road.destroy();
+      loveWord2.destroy();
+      art.destroy();
+      loveWord3.destroy();
+      tree.destroy();
+      this.scene.launch('HistoryScene');
     }, this);
   }
   update() {
