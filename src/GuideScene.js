@@ -1,5 +1,6 @@
 import Animated from 'phaser-animated-tiles';
 import scaleConfig from './common';
+import LetterScene from './LetterScene';
 
 var coffee, leaves, dinner, packageImage, northGate, guideWord1, guideWord2, guideWord3, guideWord4;
 var alpha1 = 0;
@@ -11,6 +12,7 @@ class GuideScene extends Phaser.Scene {
   constructor(test) {
     super({
       key: 'GuideScene'
+      
     });
   }
   preload() {
@@ -26,6 +28,7 @@ class GuideScene extends Phaser.Scene {
     this.load.image('guideWord3', '../assets/guideword3.png');
     this.load.image('guideWord4', '../assets/guideword4.png');
   }
+  
   create() {
     var bgMusic = this.sound.add('bgMusic');
     bgMusic.play();

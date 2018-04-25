@@ -11,6 +11,35 @@ class LetterScene extends Phaser.Scene {
     });
   }
   preload() {
+
+    this.load.image('loading-background','../assets/loading-background.png');
+    let loadingBack = this.add.image(scaleConfig.moveX,scaleConfig.moveY,'loading-background');
+    loadingBack.scaleX = scaleConfig.gamescaleX;
+    loadingBack.scaleY = scaleConfig.gamescaleY;
+  
+    // var progressText = this.add.text(scaleConfig.moveX, scaleConfig.moveY, '0%', {
+    //   fontSize: '60px',
+    //   fill: '#ffffff'
+    // });
+    // console.log(loadingBack)
+    // progressText.anchor.setTo(0.5, 0.5); // 设置锚点，用于居中
+    // // 监听加载完一个文件的事件
+    // this.load.onFileComplete.add(function(progress) {
+    // progressText.text = progress + '%';
+    // },this);
+    //progressText.anchor.setTo(0.5, 0.5); // 设置锚点，用于居中
+    // 监听加载完一个文件的事件
+    // this.load.on('fileprogress', function (file, value) {
+    //   console.log(progressText.text)
+    //   progressText.text = value*100 + '%';
+    // });
+  //   this.load.on('complete', function () {
+   
+  //   console.log(this.scene)
+  //      this.scene.start('create')
+  // },this);
+   
+
     this.load.image('letterBackground','../assets/letterBackground.png');
     this.load.image('letterCover', '../assets/letterCover.png');
     this.load.image('letter', '../assets/letter.png');
@@ -75,5 +104,6 @@ class LetterScene extends Phaser.Scene {
       }
     }
   }
+    
 }
 export default LetterScene;

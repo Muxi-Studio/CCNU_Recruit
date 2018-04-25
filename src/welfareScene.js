@@ -11,15 +11,15 @@ class welfareScene extends Phaser.Scene{
        
     }
     preload() {
-        this.load.image('all-background','../assests/background.png');
-        this.load.image('all-coffee','../assests/coffee.png');
-        this.load.image('all-leaves','../assests/leaves.png');
-        this.load.image('welfare-gold','../assests/welfareGold.png');
-        this.load.image('welfare-word','../assests/welfareWord.png');
+        this.load.image('all-background','../assets/background.png');
+        this.load.image('all-coffee','../assets/coffee.png');
+        this.load.image('all-leaves','../assets/leaves.png');
+        this.load.image('welfare-gold','../assets/welfareGold.png');
+        this.load.image('welfare-word','../assets/welfareWord.png');
     }
     create() {
         //设置位置和图片缩放比例
-       
+    this.matter.world.setBounds(0,-scaleConfig.gamescaleY*775,scaleConfig.gamewidth,scaleConfig.gameheight,scaleConfig.gamescaleX*1000, false,false, false, true);
         let background = this.add.image(scaleConfig.moveX,scaleConfig.moveY,'all-background');
         background.scaleX = scaleConfig.gamescaleX;
         background.scaleY = scaleConfig.gamescaleY;
