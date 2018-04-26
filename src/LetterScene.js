@@ -46,7 +46,6 @@ class LetterScene extends Phaser.Scene {
     this.load.image('arrow', 'http://p688ihx0v.bkt.clouddn.com/arrow.png');
     this.load.image('camera', 'http://p688ihx0v.bkt.clouddn.com/camera.png');
     this.load.image('start', 'http://p688ihx0v.bkt.clouddn.com/startRead.png');
-    this.load.image('letterCoverUp', 'http://p688ihx0v.bkt.clouddn.com/letterCoverUp.png');
   }
   create() {
     var background = this.add.sprite(scaleConfig.moveX, scaleConfig.moveY, 'letterBackground');
@@ -56,10 +55,6 @@ class LetterScene extends Phaser.Scene {
     arrow = this.add.sprite(scaleConfig.moveX, 1142 * scaleConfig.gamescaleY, 'arrow').setAlpha(0);
     arrow.scaleX = scaleConfig.gamescaleX;
     arrow.scaleY = scaleConfig.gamescaleY;
-
-    let letterCoverUp = this.add.sprite(scaleConfig.moveX, 530 * scaleConfig.gamescaleY, 'letterCoverUp');
-    letterCoverUp.scaleX = scaleConfig.gamescaleX;
-    letterCoverUp.scaleY = scaleConfig.gamescaleY;
 
     letter = this.add.sprite(scaleConfig.moveX, 1000 * scaleConfig.gamescaleY, 'letter');
     letter.scaleX = scaleConfig.gamescaleX;
@@ -89,7 +84,6 @@ class LetterScene extends Phaser.Scene {
         arrow.destroy();
         letter.destroy();
         letterCover.destroy();
-        letterCoverUp.destroy();
         camera.destroy();
         start.destroy();
         this.scene.launch('GuideScene');
