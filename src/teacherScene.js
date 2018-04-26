@@ -36,19 +36,26 @@ class TeacherScene extends Phaser.Scene {
     teacherWord3.scaleX = scaleConfig.gamescaleX;
     teacherWord3.scaleY = scaleConfig.gamescaleY;
 
-    let drag = false;
-    this.input.on('pointermove', function() {
-      drag = true;
-    }, this)
+    // let drag = false;
+    // this.input.on('pointermove', function() {
+    //   drag = true;
+    // }, this)
 
-    this.input.on('pointerup', function() {
-      if (drag) {
-        hat.destroy();
-        teacherWord1.destroy();
-        teacherWord2.destroy();
-        teacherWord3.destroy();
-        this.scene.launch('LoveScene');
-      }
+    // this.input.on('pointerup', function() {
+    //   if (drag) {
+    //     hat.destroy();
+    //     teacherWord1.destroy();
+    //     teacherWord2.destroy();
+    //     teacherWord3.destroy();
+    //     this.scene.launch('LoveScene');
+    //   }
+    // }, this)
+    this.input.on('pointerdown', function(){
+      hat.destroy();
+      teacherWord1.destroy();
+      teacherWord2.destroy();
+      teacherWord3.destroy();
+      this.scene.launch('LoveScene');
     }, this)
   }
 

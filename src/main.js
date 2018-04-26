@@ -6,7 +6,6 @@ import scaleConfig from './common';
 import TeacherScene from './teacherScene';
 import LoveScene from './loveScene';
 import HistoryScene from './historyScene';
-//import GuideScene from './GuideScene';
 import recruitScene from './recruitScene';
 import childrenScene from './childrenScene'
 import QRcodeScene from './QRcodeScene';

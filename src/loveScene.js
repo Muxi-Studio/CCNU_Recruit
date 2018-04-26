@@ -48,23 +48,32 @@ class LoveScene extends Phaser.Scene {
     tree.scaleX = scaleConfig.gamescaleX;
     tree.scaleY = scaleConfig.gamescaleY;
 
-    let drag = false;
+    // let drag = false;
 
-    this.input.on('pointermove', function() {
-      drag = true;
-    }, this)
+    // this.input.on('pointermove', function() {
+    //   drag = true;
+    // }, this)
 
-    this.input.on('pointerup', function() {
-      if (drag) {
-        loveWord1.destroy();
-        road.destroy();
-        loveWord2.destroy();
-        art.destroy();
-        loveWord3.destroy();
-        tree.destroy();
-        this.scene.launch('HistoryScene');
-      }
-    }, this)
+    // this.input.on('pointerup', function() {
+    //   if (drag) {
+    //     loveWord1.destroy();
+    //     road.destroy();
+    //     loveWord2.destroy();
+    //     art.destroy();
+    //     loveWord3.destroy();
+    //     tree.destroy();
+    //     this.scene.launch('HistoryScene');
+    //   }
+    // }, this)
+    this.input.once('pointerdown', function () {
+            loveWord1.destroy();
+            road.destroy();
+            loveWord2.destroy();
+            art.destroy();
+            loveWord3.destroy();
+            tree.destroy();
+            this.scene.launch('HistoryScene');
+          }, this);
   }
   update() {
     // coffee.rotation += 0.01;
