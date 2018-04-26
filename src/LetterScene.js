@@ -2,43 +2,58 @@ import Animated from 'phaser-animated-tiles';
 import scaleConfig from './common';
 
 var arrow, letter, start;
+var loadingText ;
 var flag = 1;
+var loadingBack,loadingPlane,loadingWay;
+var chax = 0;
+var x=scaleConfig.gamescaleX*314,y=scaleConfig.gamescaleY*468;
+var group;
+
 
 class LetterScene extends Phaser.Scene {
   constructor(test) {
     super({
-      key: 'LetterScene'
+      key: 'LetterScene',
+      files:[
+        {type:"image",key:"loading-background",url:"http://p688ihx0v.bkt.clouddn.com/loading-background.png"},
+        // {type:"image",key:"loading-plane",url:"../assets/loading-plane.png"},
+        // {type:"image",key:"loading-way",url:"../assets/loading-way.png"}
+      ]
     });
+   
   }
-  preload() {
-
-    this.load.image('loading-background','http://p688ihx0v.bkt.clouddn.com/loading-background.png');
-    let loadingBack = this.add.image(scaleConfig.moveX,scaleConfig.moveY,'loading-background');
-    loadingBack.scaleX = scaleConfig.gamescaleX;
-    loadingBack.scaleY = scaleConfig.gamescaleY;
   
-    // var progressText = this.add.text(scaleConfig.moveX, scaleConfig.moveY, '0%', {
-    //   fontSize: '60px',
-    //   fill: '#ffffff'
-    // });
-    // console.log(loadingBack)
-    // progressText.anchor.setTo(0.5, 0.5); // 设置锚点，用于居中
-    // // 监听加载完一个文件的事件
-    // this.load.onFileComplete.add(function(progress) {
-    // progressText.text = progress + '%';
-    // },this);
-    //progressText.anchor.setTo(0.5, 0.5); // 设置锚点，用于居中
-    // 监听加载完一个文件的事件
-    // this.load.on('fileprogress', function (file, value) {
-    //   console.log(progressText.text)
-    //   progressText.text = value*100 + '%';
-    // });
-  //   this.load.on('complete', function () {
-   
-  //   console.log(this.scene)
-  //      this.scene.start('create')
-  // },this);
-   
+  
+  preload() {
+    
+    loadingBack = this.add.sprite(scaleConfig.moveX,scaleConfig.moveY,'loading-background');
+    loadingBack.scaleX = scaleConfig.gamescaleX;
+    loadingBack.scaleY = scaleConfig.gamescaleY; 
+    loadingPlane = this.add.sprite(scaleConfig.gamescaleX*314,scaleConfig.gamescaleY*468,'loading-plane');
+    loadingPlane.scaleX = scaleConfig.gamescaleX;
+    loadingPlane.scaleY = scaleConfig.gamescaleY;
+    loadingWay = this.add.sprite(scaleConfig.gamescaleX*154,scaleConfig.gamescaleY*468,'loading-way');
+    loadingWay.scaleX = scaleConfig.gamescaleX;
+    loadingWay.scaleY = scaleConfig.gamescaleY;
+  //  group = this.add.group({key:"loading-way",frameQuantity:2});
+
+    function loadingWordChange(){
+        if(loadingText.text == '努力加载中'){
+          loadingText.setText('努力加载中.');
+        } 
+        else if(loadingText.text == '努力加载中.'){
+          loadingText.setText('努力加载中..');
+        }
+        else if(loadingText.text == '努力加载中.'){
+          loadingText.setText('努力加载中..');
+        }else if(loadingText.text == '努力加载中..'){
+          loadingText.setText('努力加载中...');
+        }else{
+          loadingText.setText('努力加载中.');
+        }
+      }
+    
+  
 
     this.load.image('letterBackground','http://p688ihx0v.bkt.clouddn.com/letterBackground.png');
     this.load.image('letterCover', 'http://p688ihx0v.bkt.clouddn.com/letterCover.png');
@@ -46,8 +61,33 @@ class LetterScene extends Phaser.Scene {
     this.load.image('arrow', 'http://p688ihx0v.bkt.clouddn.com/arrow.png');
     this.load.image('camera', 'http://p688ihx0v.bkt.clouddn.com/camera.png');
     this.load.image('start', 'http://p688ihx0v.bkt.clouddn.com/startRead.png');
+   
+    loadingText = this.add.text(scaleConfig.moveX-scaleConfig.gamescaleX*90, scaleConfig.moveY-scaleConfig.gamescaleY*65, '努力加载中', {
+      fontSize: '20px',
+      fill: 'rgb(173,151,138)'
+    });
+    var progressText = this.add.text(scaleConfig.moveX-15, scaleConfig.moveY, '0%', {
+      fontSize: '20px',
+      fill: 'rgb(83,67,58)'
+    });
+   // progressText.tint = 'rgb(173,151,138)';
+  let oldx = x;
+  this.load.on('progress', function(value)
+  {
+     if(value!==1){
+       loadingWordChange();
+     } 
+      progressText.setText(Math.round(value * 100) + '%');
+  });
+  
   }
   create() {
+   
+     
+    // var loadingBackground = this.add.sprite(scaleConfig.moveX, scaleConfig.moveY, 'loading-background');
+    // loadingBackground.scaleX = scaleConfig.gamescaleX;
+    // loadingBackground.scaleY = scaleConfig.gamescaleY;
+
     var background = this.add.sprite(scaleConfig.moveX, scaleConfig.moveY, 'letterBackground');
     background.scaleX = scaleConfig.gamescaleX;
     background.scaleY = scaleConfig.gamescaleY;
@@ -55,6 +95,13 @@ class LetterScene extends Phaser.Scene {
     arrow = this.add.sprite(scaleConfig.moveX, 1142 * scaleConfig.gamescaleY, 'arrow').setAlpha(0);
     arrow.scaleX = scaleConfig.gamescaleX;
     arrow.scaleY = scaleConfig.gamescaleY;
+
+    letter = this.add.sprite(scaleConfig.moveX, 1000 * scaleConfig.gamescaleY, 'letter');
+    letter.scaleX = scaleConfig.gamescaleX;
+    letter.scaleY = scaleConfig.gamescaleY;
+  //   let letterCoverUp = this.add.sprite(scaleConfig.moveX, 530 * scaleConfig.gamescaleY, 'letterCoverUp');
+  //   letterCoverUp.scaleX = scaleConfig.gamescaleX;
+  //   letterCoverUp.scaleY = scaleConfig.gamescaleY;
 
     letter = this.add.sprite(scaleConfig.moveX, 1000 * scaleConfig.gamescaleY, 'letter');
     letter.scaleX = scaleConfig.gamescaleX;
@@ -105,7 +152,7 @@ class LetterScene extends Phaser.Scene {
         if (arrow.y == scaleConfig.gamescaleY * 1142) flag = 1;
       }
     }
-  }
+ }
     
 }
 export default LetterScene;

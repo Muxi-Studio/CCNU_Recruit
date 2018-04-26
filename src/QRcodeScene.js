@@ -1,8 +1,8 @@
 import scaleConfig  from './common'
-var QRbell,QRcode,QRword1,QRword2,QRword3;
+var QRbell,QRcode,QRword1,QRword2,QRword3,QRpower;
 var background,coffee,leaves;
-var alphaC , alpha1 ,alpha2 , alpha3;
-alphaC = alpha1 = alpha2 = alpha3 = 0;
+var alphaC , alpha1 ,alpha2 , alpha3,alpha4;
+alphaC = alpha1 = alpha2 = alpha3 = alpha4 = 0;
 var rotaFlag = 0;
 
 class QRcodeScene extends Phaser.Scene{
@@ -16,12 +16,13 @@ class QRcodeScene extends Phaser.Scene{
     preload() {
         this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
         this.load.image('coffee','http://p688ihx0v.bkt.clouddn.com/coffee.png');
-        this.load.image('leaves','http://p688ihx0v.bkt.clouddn.com/leaves.png');
+        this.load.image('water-mark','http://p688ihx0v.bkt.clouddn.com/waterMark.png');
         this.load.image('QRcode','http://p688ihx0v.bkt.clouddn.com/QRcode.png');
         this.load.image('QRbell','http://p688ihx0v.bkt.clouddn.com/QRbell.png');
         this.load.image('QRword1','http://p688ihx0v.bkt.clouddn.com/QRcode-word1.png');
         this.load.image('QRword2','http://p688ihx0v.bkt.clouddn.com/QRcode-word2.png');
         this.load.image('QRword3','http://p688ihx0v.bkt.clouddn.com/QRcode-word3.png');
+        this.load.image('QRpower','http://p688ihx0v.bkt.clouddn.com/QRcode-power.png')
     }
     create() {
         //设置位置和图片缩放比例
@@ -58,7 +59,9 @@ class QRcodeScene extends Phaser.Scene{
     QRcode.scaleX = scaleConfig.gamescaleX;
     QRcode.scaleY = scaleConfig.gamescaleY;
 
-   
+    QRpower = this.add.sprite(scaleConfig.gamescaleX*376,scaleConfig.gamescaleY*980,'QRpower').setAlpha(0);
+    QRpower.scaleX = scaleConfig.gamescaleX;
+    QRpower.scaleY = scaleConfig.gamescaleY;
 
     }
     update(){
@@ -71,7 +74,6 @@ class QRcodeScene extends Phaser.Scene{
             QRbell.rotation -= 0.005;
             if (QRbell.rotation <= -0.5) {
                 rotaFlag = 0;
-            
             }
         }
         this.time.addEvent({
@@ -115,6 +117,17 @@ class QRcodeScene extends Phaser.Scene{
                 if(alpha3<=1){
                     alpha3 += 0.008;
                     QRword3.setAlpha(alpha3);
+                }
+            },
+            callbackScope: this,    
+        }); 
+        this.time.addEvent({
+            delay: 4000,
+            callback: function ()
+            {
+                if(alpha4<=1){
+                    alpha4 += 0.008;
+                    QRpower.setAlpha(alpha4);
                 }
             },
             callbackScope: this,    

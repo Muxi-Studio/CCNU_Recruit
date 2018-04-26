@@ -1,6 +1,6 @@
 
 import scaleConfig  from './common'
-import { WSATYPE_NOT_FOUND } from 'constants';
+
 var schoolGate,waterMark,futureWord1,futureWord2;
 var background,coffee,leaves;
 var alphaM , alpha1 ,alpha2 , alpha3;
@@ -36,7 +36,7 @@ class futureScene extends Phaser.Scene{
         leaves.scaleX = scaleConfig.gamescaleX;
         leaves.scaleY = scaleConfig.gamescaleY;
         
-        futureWord1 = this.add.sprite(scaleConfig.gamescaleX*384,scaleConfig.gamescaleY*308,'future-word1').setAlpha(0);
+        futureWord1 = this.add.sprite(scaleConfig.gamescaleX*384,scaleConfig.gamescaleY*315,'future-word1').setAlpha(0);
         futureWord1.scaleX = scaleConfig.gamescaleX;
         futureWord1.scaleY = scaleConfig.gamescaleY;
     
@@ -44,13 +44,14 @@ class futureScene extends Phaser.Scene{
         futureWord2.scaleX = scaleConfig.gamescaleX;
         futureWord2.scaleY = scaleConfig.gamescaleY;
     
-        waterMark = this.add.sprite(scaleConfig.gamescaleX*176,scaleConfig.gamescaleY*957,'water-mark').setAlpha(0);
-        waterMark.scaleX = scaleConfig.gamescaleX;
-        waterMark.scaleY = scaleConfig.gamescaleY;
     
         schoolGate = this.add.sprite(scaleConfig.gamescaleX*384,scaleConfig.gamescaleY*816,'school-gate').setAlpha(0);
         schoolGate.scaleX = scaleConfig.gamescaleX;
         schoolGate.scaleY = scaleConfig.gamescaleY;
+        
+        waterMark = this.add.sprite(scaleConfig.gamescaleX*176,scaleConfig.gamescaleY*957,'water-mark').setAlpha(0);
+        waterMark.scaleX = scaleConfig.gamescaleX;
+        waterMark.scaleY = scaleConfig.gamescaleY;
 
     }
     update(){
@@ -81,9 +82,9 @@ class futureScene extends Phaser.Scene{
             delay: 3000,
             callback: function ()
             {
-                if(alphaC <=1){
-                    alphaC += 0.008;
-                    schoolGate.setAlpha(alphaC);
+                if(alphaM <=1){
+                    alphaM += 0.008;
+                    schoolGate.setAlpha(alphaM);
                 }
             },
             callbackScope: this,    

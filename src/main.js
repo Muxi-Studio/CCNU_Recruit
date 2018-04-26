@@ -6,10 +6,11 @@ import scaleConfig from './common';
 import TeacherScene from './teacherScene';
 import LoveScene from './loveScene';
 import HistoryScene from './historyScene';
-import Recruit from './recruitScene';
+//import GuideScene from './GuideScene';
+import recruitScene from './recruitScene';
 import childrenScene from './childrenScene'
 import QRcodeScene from './QRcodeScene';
-
+import futureScene from './futureScene'
 let config = {
     type: Phaser.AUTO,
     parent: 'content',
@@ -33,7 +34,7 @@ let config = {
         }
     },
     // files:[
-    //     {type:"image",key:"loading-background",url:"../assests/loading-background.png"}
+    //     {type:"image",key:"loading-background",url:"../assets/loading-background.png"}
     // ]
     
 };
