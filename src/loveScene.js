@@ -13,9 +13,6 @@ class LoveScene extends Phaser.Scene {
     });
   }
   preload() {
-    // this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
-    // this.load.image('coffee', 'http://p688ihx0v.bkt.clouddn.com/coffee.png');
-    // this.load.image('leaves', 'http://p688ihx0v.bkt.clouddn.com/leaves.png');
     this.load.image('road', 'http://p688ihx0v.bkt.clouddn.com/road.png');
     this.load.image('tree', 'http://p688ihx0v.bkt.clouddn.com/tree.png');
     this.load.image('art', 'http://p688ihx0v.bkt.clouddn.com/art.png');
@@ -24,18 +21,6 @@ class LoveScene extends Phaser.Scene {
     this.load.image('loveWord3', 'http://p688ihx0v.bkt.clouddn.com/loveWord3.png');
   }
   create() {
-    // let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');
-    // background.scaleX = scaleConfig.gamescaleX;
-    // background.scaleY = scaleConfig.gamescaleY;
-
-    // coffee = this.add.image(694 * scaleConfig.gamescaleX, 1182 * scaleConfig.gamescaleY, 'coffee');
-    // coffee.scaleX = scaleConfig.gamescaleX;
-    // coffee.scaleY = scaleConfig.gamescaleY;
-
-    // leaves = this.add.image(0, 80 * scaleConfig.gamescaleY, 'leaves').setOrigin(0);
-    // leaves.scaleX = scaleConfig.gamescaleX;
-    // leaves.scaleY = scaleConfig.gamescaleY;
-
     loveWord1 = this.add.sprite(scaleConfig.moveX, 389 * scaleConfig.gamescaleY, 'loveWord1').setAlpha(0);
     loveWord1.scaleX = scaleConfig.gamescaleX;
     loveWord1.scaleY = scaleConfig.gamescaleY;
@@ -63,15 +48,23 @@ class LoveScene extends Phaser.Scene {
     tree.scaleX = scaleConfig.gamescaleX;
     tree.scaleY = scaleConfig.gamescaleY;
 
-    this.input.once('pointerdown', function () {
-      loveWord1.destroy();
-      road.destroy();
-      loveWord2.destroy();
-      art.destroy();
-      loveWord3.destroy();
-      tree.destroy();
-      this.scene.launch('HistoryScene');
-    }, this);
+    var drag = false;
+
+    this.input.on('pointermove', function() {
+      drag = true;
+    }, this)
+
+    this.input.on('pointerup', function() {
+      if (drag) {
+        loveWord1.destroy();
+        road.destroy();
+        loveWord2.destroy();
+        art.destroy();
+        loveWord3.destroy();
+        tree.destroy();
+        this.scene.launch('HistoryScene');
+      }
+    }, this)
   }
   update() {
     // coffee.rotation += 0.01;

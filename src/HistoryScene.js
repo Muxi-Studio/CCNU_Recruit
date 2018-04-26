@@ -76,16 +76,24 @@ class HistoryScene extends Phaser.Scene {
     historyPhoto6.scaleX = scaleConfig.gamescaleX;
     historyPhoto6.scaleY = scaleConfig.gamescaleY;
 
-    this.input.once('pointerdown', function () {
-      historyWord1.destroy();
-      historyWord2.destroy();
-      historyPhoto1.destroy();
-      historyPhoto2.destroy();
-      historyPhoto3.destroy();
-      historyPhoto4.destroy();
-      historyPhoto5.destroy();
-      historyPhoto6.destroy();
-      this.scene.launch('childrenScene');
+    var drag = false;
+
+    this.input.on('pointermove', function() {
+      drag = true;
+    }, this)
+
+    this.input.on('pointerup', function() {
+      if (drag) {
+        historyWord1.destroy();
+        historyWord2.destroy();
+        historyPhoto1.destroy();
+        historyPhoto2.destroy();
+        historyPhoto3.destroy();
+        historyPhoto4.destroy();
+        historyPhoto5.destroy();
+        historyPhoto6.destroy();
+        this.scene.launch('childrenScene');
+      }
     }, this);
   }
 

@@ -14,27 +14,12 @@ class TeacherScene extends Phaser.Scene {
     });
   }
   preload() {
-    // this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
-    // this.load.image('coffee', 'http://p688ihx0v.bkt.clouddn.com/coffee.png');
-    // this.load.image('leaves', 'http://p688ihx0v.bkt.clouddn.com/leaves.png');
     this.load.image('hat', 'http://p688ihx0v.bkt.clouddn.com/hat.png');
     this.load.image('teacherWord1', 'http://p688ihx0v.bkt.clouddn.com/teacherWord1.png');
     this.load.image('teacherWord2', 'http://p688ihx0v.bkt.clouddn.com/teacherWord2.png');
     this.load.image('teacherWord3', 'http://p688ihx0v.bkt.clouddn.com/teacherWord3.png');
   }
-  create() {
-    // let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');
-    // background.scaleX = scaleConfig.gamescaleX;
-    // background.scaleY = scaleConfig.gamescaleY;
-
-    // coffee = this.add.image(694 * scaleConfig.gamescaleX, 1182 * scaleConfig.gamescaleY, 'coffee');
-    // coffee.scaleX = scaleConfig.gamescaleX;
-    // coffee.scaleY = scaleConfig.gamescaleY;
-
-    // leaves = this.add.image(0, 80 * scaleConfig.gamescaleY, 'leaves').setOrigin(0);
-    // leaves.scaleX = scaleConfig.gamescaleX;
-    // leaves.scaleY = scaleConfig.gamescaleY;    
-
+  create() { 
     var hat = this.add.sprite(230 * scaleConfig.gamescaleX, 1063 * scaleConfig.gamescaleY, 'hat');
     hat.scaleX = scaleConfig.gamescaleX;
     hat.scaleY = scaleConfig.gamescaleY;
@@ -51,21 +36,23 @@ class TeacherScene extends Phaser.Scene {
     teacherWord3.scaleX = scaleConfig.gamescaleX;
     teacherWord3.scaleY = scaleConfig.gamescaleY;
 
+    var drag = false;
+    this.input.on('pointermove', function() {
+      drag = true;
+    }, this)
 
-    this.input.on('pointerdown', function () {
-      hat.destroy();
-      teacherWord1.destroy();
-      teacherWord2.destroy();
-      teacherWord3.destroy();
-      this.scene.launch('LoveScene');
-    }, this);
+    this.input.on('pointerup', function() {
+      if (drag) {
+        hat.destroy();
+        teacherWord1.destroy();
+        teacherWord2.destroy();
+        teacherWord3.destroy();
+        this.scene.launch('LoveScene');
+      }
+    }, this)
   }
 
   update() {
-    // coffee.rotation += 0.01;
-    // if (leaves.rotation < 0.4) leaves.rotation += 0.005;
-    
-
     this.time.addEvent({
       delay: 1000,
       callback: function ()

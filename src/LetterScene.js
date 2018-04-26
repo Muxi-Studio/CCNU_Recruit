@@ -77,16 +77,24 @@ class LetterScene extends Phaser.Scene {
     start.scaleX = scaleConfig.gamescaleX;
     start.scaleY = scaleConfig.gamescaleY;
 
-    this.input.once('pointerdown', function () {
-      background.destroy();
-      arrow.destroy();
-      letter.destroy();
-      letterCover.destroy();
-      letterCoverUp.destroy();
-      camera.destroy();
-      start.destroy();
-      this.scene.launch('GuideScene');
-    }, this);
+    var drag = false;
+
+    this.input.on('pointermove', function() {
+      drag = true;
+    }, this)
+
+    this.input.on('pointerup', function() {
+      if (drag) {
+        background.destroy();
+        arrow.destroy();
+        letter.destroy();
+        letterCover.destroy();
+        letterCoverUp.destroy();
+        camera.destroy();
+        start.destroy();
+        this.scene.launch('GuideScene');
+      }
+    }, this)
   }
   update() {
     if (letter.y >= 800 * scaleConfig.gamescaleY) {
