@@ -35,7 +35,6 @@ class LetterScene extends Phaser.Scene {
     loadingWay = this.add.sprite(scaleConfig.gamescaleX*154,scaleConfig.gamescaleY*468,'loading-way');
     loadingWay.scaleX = scaleConfig.gamescaleX;
     loadingWay.scaleY = scaleConfig.gamescaleY;
-  //  group = this.add.group({key:"loading-way",frameQuantity:2});
 
     function loadingWordChange(){
         if(loadingText.text == '努力加载中'){
