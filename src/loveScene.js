@@ -1,7 +1,7 @@
 import Animated from 'phaser-animated-tiles';
 import scaleConfig from './common';
 
-var coffee, leaves, art, road, tree, loveWord1, loveWord2, loveWord3;
+var art, road, tree, loveWord1, loveWord2, loveWord3;
 var alpha1 = 0;
 var alpha2 = 0;
 var alpha3 = 0;
@@ -48,7 +48,7 @@ class LoveScene extends Phaser.Scene {
     tree.scaleX = scaleConfig.gamescaleX;
     tree.scaleY = scaleConfig.gamescaleY;
 
-    var drag = false;
+    let drag = false;
 
     this.input.on('pointermove', function() {
       drag = true;

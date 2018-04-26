@@ -22,10 +22,10 @@ class GuideScene extends Phaser.Scene {
     this.load.image('dinner', 'http://p688ihx0v.bkt.clouddn.com/eat.png');
     this.load.image('packageImage', 'http://p688ihx0v.bkt.clouddn.com/packageImage.png');
     this.load.image('northGate', 'http://p688ihx0v.bkt.clouddn.com/northGate.png');
-    this.load.image('guideWord1', 'http://p688ihx0v.bkt.clouddn.com/guideword1.png');
-    this.load.image('guideWord2', 'http://p688ihx0v.bkt.clouddn.com/guideword2.png');
-    this.load.image('guideWord3', 'http://p688ihx0v.bkt.clouddn.com/guideword3.png');
-    this.load.image('guideWord4', 'http://p688ihx0v.bkt.clouddn.com/guideword4.png');
+    this.load.image('guideWord1', 'http://p688ihx0v.bkt.clouddn.com/guideWord1.png');
+    this.load.image('guideWord2', 'http://p688ihx0v.bkt.clouddn.com/guideWord2.png');
+    this.load.image('guideWord3', 'http://p688ihx0v.bkt.clouddn.com/guideWord3.png');
+    this.load.image('guideWord4', 'http://p688ihx0v.bkt.clouddn.com/guideWord4.png');
   }
   
   create() {
@@ -77,7 +77,7 @@ class GuideScene extends Phaser.Scene {
     guideWord4.scaleX = scaleConfig.gamescaleX;
     guideWord4.scaleY = scaleConfig.gamescaleY;
 
-    var drag = false;
+    let drag = false;
 
     this.input.on('pointermove', function() {
       drag = true;

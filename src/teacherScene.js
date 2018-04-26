@@ -36,7 +36,7 @@ class TeacherScene extends Phaser.Scene {
     teacherWord3.scaleX = scaleConfig.gamescaleX;
     teacherWord3.scaleY = scaleConfig.gamescaleY;
 
-    var drag = false;
+    let drag = false;
     this.input.on('pointermove', function() {
       drag = true;
     }, this)
