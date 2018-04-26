@@ -11,7 +11,7 @@ import childrenScene from './childrenScene'
 import QRcodeScene from './QRcodeScene';
 import futureScene from './futureScene'
 let config = {
-    type: Phaser.AUTO,
+    type: Phaser.CANVAS,
     parent: 'content',
     width: scaleConfig.gamewidth,
     height: scaleConfig.gameheight,

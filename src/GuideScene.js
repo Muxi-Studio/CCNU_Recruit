@@ -15,7 +15,6 @@ class GuideScene extends Phaser.Scene {
     });
   }
   preload() {
-    this.load.audio('bgMusic', 'http://p688ihx0v.bkt.clouddn.com/bgMusic.mp3');
     this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
     this.load.image('coffee', 'http://p688ihx0v.bkt.clouddn.com/coffee.png');
     this.load.image('leaves', 'http://p688ihx0v.bkt.clouddn.com/leaves.png');
@@ -29,8 +28,7 @@ class GuideScene extends Phaser.Scene {
   }
   
   create() {
-    var bgMusic = this.sound.add('bgMusic');
-    bgMusic.play();
+    
 
     let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');
     background.scaleX = scaleConfig.gamescaleX;

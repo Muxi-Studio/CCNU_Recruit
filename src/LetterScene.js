@@ -25,7 +25,7 @@ class LetterScene extends Phaser.Scene {
   
   
   preload() {
-    
+    this.load.audio('bgMusic', 'http://p688ihx0v.bkt.clouddn.com/bgMusic.mp3');
     loadingBack = this.add.sprite(scaleConfig.moveX,scaleConfig.moveY,'loading-background');
     loadingBack.scaleX = scaleConfig.gamescaleX;
     loadingBack.scaleY = scaleConfig.gamescaleY; 
@@ -81,7 +81,8 @@ class LetterScene extends Phaser.Scene {
   
   }
   create() {
-   
+    var bgMusic = this.sound.add('bgMusic');
+    bgMusic.play();
      
     // var loadingBackground = this.add.sprite(scaleConfig.moveX, scaleConfig.moveY, 'loading-background');
     // loadingBackground.scaleX = scaleConfig.gamescaleX;
@@ -94,13 +95,6 @@ class LetterScene extends Phaser.Scene {
     arrow = this.add.sprite(scaleConfig.moveX, 1142 * scaleConfig.gamescaleY, 'arrow').setAlpha(0);
     arrow.scaleX = scaleConfig.gamescaleX;
     arrow.scaleY = scaleConfig.gamescaleY;
-
-    letter = this.add.sprite(scaleConfig.moveX, 1000 * scaleConfig.gamescaleY, 'letter');
-    letter.scaleX = scaleConfig.gamescaleX;
-    letter.scaleY = scaleConfig.gamescaleY;
-  //   let letterCoverUp = this.add.sprite(scaleConfig.moveX, 530 * scaleConfig.gamescaleY, 'letterCoverUp');
-  //   letterCoverUp.scaleX = scaleConfig.gamescaleX;
-  //   letterCoverUp.scaleY = scaleConfig.gamescaleY;
 
     letter = this.add.sprite(scaleConfig.moveX, 1000 * scaleConfig.gamescaleY, 'letter');
     letter.scaleX = scaleConfig.gamescaleX;
@@ -135,15 +129,18 @@ class LetterScene extends Phaser.Scene {
     //     this.scene.launch('GuideScene');
     //   }
     // }, this)
-    this.input.once('pointerdown', function () {
-            background.destroy();
-            arrow.destroy();
-            letter.destroy();
-            letterCover.destroy();
-            camera.destroy();
-            start.destroy();
-            this.scene.launch('GuideScene');
-          }, this);
+    this.input.addMoveCallback(function() {
+      alert("haha")
+    }, this)
+    // this.input.once('pointerdown', function () {
+    //         background.destroy();
+    //         arrow.destroy();
+    //         letter.destroy();
+    //         letterCover.destroy();
+    //         camera.destroy();
+    //         start.destroy();
+    //         this.scene.launch('GuideScene');
+    //       }, this);
     
   }
   update() {

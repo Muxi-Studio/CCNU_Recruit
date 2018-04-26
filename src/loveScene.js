@@ -66,14 +66,14 @@ class LoveScene extends Phaser.Scene {
     //   }
     // }, this)
     this.input.once('pointerdown', function () {
-            loveWord1.destroy();
-            road.destroy();
-            loveWord2.destroy();
-            art.destroy();
-            loveWord3.destroy();
-            tree.destroy();
-            this.scene.launch('HistoryScene');
-          }, this);
+      loveWord1.destroy();
+      road.destroy();
+      loveWord2.destroy();
+      art.destroy();
+      loveWord3.destroy();
+      tree.destroy();
+      this.scene.launch('HistoryScene');
+    }, this);
   }
   update() {
     // coffee.rotation += 0.01;
