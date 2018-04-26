@@ -129,18 +129,15 @@ class LetterScene extends Phaser.Scene {
     //     this.scene.launch('GuideScene');
     //   }
     // }, this)
-    this.input.addMoveCallback(function() {
-      alert("haha")
-    }, this)
-    // this.input.once('pointerdown', function () {
-    //         background.destroy();
-    //         arrow.destroy();
-    //         letter.destroy();
-    //         letterCover.destroy();
-    //         camera.destroy();
-    //         start.destroy();
-    //         this.scene.launch('GuideScene');
-    //       }, this);
+    this.input.once('pointerdown', function () {
+      background.destroy();
+      arrow.destroy();
+      letter.destroy();
+      letterCover.destroy();
+      camera.destroy();
+      start.destroy();
+      this.scene.launch('GuideScene');
+    }, this);
     
   }
   update() {
