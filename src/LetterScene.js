@@ -15,22 +15,37 @@ class LetterScene extends Phaser.Scene {
   constructor(test) {
     super({
       key: 'LetterScene',
+      
       files:[
         {type:"image",key:"loading-background",url:"http://p688ihx0v.bkt.clouddn.com/loading-background-new.png"},
-        {type:"image",key:"loading-planesheet",url:"../assets/loading-planesheet.png", frameWidth: 5328, frameHeight: 364 }
+        {type:"image",key:"loading-planesheet",url:"../assets/loading-planesheet.png" }
+       // {type:"image",key:"loading-planesheet",url:"../assets/loading-planesheet.png", frameWidth: 5328, frameHeight: 364 }
 
       ]
+      
     });
    
   }
   
   
   preload() {
+ 
     this.load.audio('bgMusic', 'http://p688ihx0v.bkt.clouddn.com/bgMusic.mp3');
     loadingBack = this.add.sprite(scaleConfig.moveX,scaleConfig.moveY,'loading-background');
     loadingBack.scaleX = scaleConfig.gamescaleX;
     loadingBack.scaleY = scaleConfig.gamescaleY; 
-    
+    loadingPlane = this.add.sprite(scaleConfig.gamescaleX*314,scaleConfig.gamescaleY*468,'loading-planesheet');
+    loadingPlane.scaleX = scaleConfig.gamescaleX;
+    loadingPlane.scaleY = scaleConfig.gamescaleY;
+    this.anims.create({
+      key: 'fly',
+      frames: this.anims.generateFrameNumbers('loading-planesheet', { start: 0, end: 10 }),
+      frameRate: 10,
+      repeat: -1
+  });
+ 
+  console.log(loadingPlane.frame)
+  loadingPlane.anims.play('fly',true);
   //   var config = {
   //     key: 'flash',
   //     frames: this.anims.generateFrameNumbers('loading-planesheet', { start: 0, end: 10 }),
@@ -112,7 +127,11 @@ class LetterScene extends Phaser.Scene {
       this.load.image('historyPhoto4', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto4.png');
       this.load.image('historyPhoto5', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto5.png');
       this.load.image('historyPhoto6', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto6.png');
-
+      //child
+      this.load.image('school-house','http://p688ihx0v.bkt.clouddn.com/welfareSchoolHouse.png');
+      this.load.image('children-word1','http://p688ihx0v.bkt.clouddn.com/children-word1.png');
+      this.load.image('children-word2','http://p688ihx0v.bkt.clouddn.com/children-word2.png');
+      
     loadingText = this.add.text(scaleConfig.moveX-scaleConfig.gamescaleX*90, scaleConfig.moveY-scaleConfig.gamescaleY*65, '努力加载中', {
       fontSize: '20px',
       fill: 'rgb(173,151,138)'
@@ -164,10 +183,11 @@ class LetterScene extends Phaser.Scene {
 
     var drag = false;
 
+   
     this.input.on('pointermove', function() {
       drag = true;
     }, this)
-
+    
     this.input.on('pointerup', function() {
       if (drag) {
 

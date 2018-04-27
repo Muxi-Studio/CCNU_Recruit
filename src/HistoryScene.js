@@ -85,7 +85,7 @@ class HistoryScene extends Phaser.Scene {
         historyPhoto4.destroy();
         historyPhoto5.destroy();
         historyPhoto6.destroy();
-        this.scene.start('childrenScene');
+       // this.scene.start('ChildrenScene');
       }
     }, this);
   }

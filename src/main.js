@@ -8,7 +8,7 @@ import LoveScene from './loveScene';
 import HistoryScene from './historyScene';
 //import GuideScene from './GuideScene';
 import recruitScene from './recruitScene';
-import childrenScene from './childrenScene'
+import ChildrenScene from './childrenScene'
 import QRcodeScene from './QRcodeScene';
 import futureScene from './futureScene'
 
@@ -24,7 +24,7 @@ let config = {
         TeacherScene,
         LoveScene,
         HistoryScene,
-        // childrenScene,
+        ChildrenScene,
         // WelfareScene,
         // QRcodeScene,
     ],

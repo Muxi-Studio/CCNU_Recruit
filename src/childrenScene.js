@@ -5,16 +5,12 @@ var background,schoolHouse,coffee,leaves,childWord1, childWord2;
 class childrenScene extends Phaser.Scene {
     constructor(){
         super({
-            key:'childrenScene'
+            key:'ChildrenScene'
         })
     }
     preload() {
-        this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
-        this.load.image('coffee', 'http://p688ihx0v.bkt.clouddn.com/coffee.png');
-        this.load.image('leaves', 'http://p688ihx0v.bkt.clouddn.com/leaves.png');
-        this.load.image('school-house','http://p688ihx0v.bkt.clouddn.com/welfareSchoolHouse.png');
-        this.load.image('children-word1','http://p688ihx0v.bkt.clouddn.com/children-word1.png');
-        this.load.image('children-word2','http://p688ihx0v.bkt.clouddn.com/children-word2.png');
+     
+
     }
     create(){
     background = this.add.sprite(scaleConfig.moveX, scaleConfig.moveY, 'background');
@@ -43,6 +39,22 @@ class childrenScene extends Phaser.Scene {
     childWord2.scaleX = scaleConfig.gamescaleX;
     childWord2.scaleY = scaleConfig.gamescaleY; 
 
+    var drag = false;
+
+    this.input.on('pointermove', function() {
+      drag = true;
+    }, this)
+
+    this.input.on('pointerup', function() {
+      if (drag) {
+        schoolHouse .destroy();
+        childWord1.destroy();
+        childWord2.destroy();
+        
+        this.scene.start('ChildrenScene');
+      }
+    }, this);
+  
     }
     update(){
         
