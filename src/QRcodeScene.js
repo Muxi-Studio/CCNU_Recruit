@@ -4,6 +4,7 @@ var background,coffee,leaves;
 var alphaC , alpha1 ,alpha2 , alpha3,alpha4;
 alphaC = alpha1 = alpha2 = alpha3 = alpha4 = 0;
 var rotaFlag = 0;
+var para, node;
 
 class QRcodeScene extends Phaser.Scene{
     constructor(){
@@ -19,7 +20,7 @@ class QRcodeScene extends Phaser.Scene{
     }
     create() {
         //设置位置和图片缩放比例
-       
+
     background = this.add.sprite(scaleConfig.moveX, scaleConfig.moveY, 'background');
     background.scaleX = scaleConfig.gamescaleX;
     background.scaleY = scaleConfig.gamescaleY;
@@ -48,14 +49,20 @@ class QRcodeScene extends Phaser.Scene{
     QRword3.scaleX = scaleConfig.gamescaleX;
     QRword3.scaleY = scaleConfig.gamescaleY;
 
-    QRcode = this.add.sprite(scaleConfig.gamescaleX*376,scaleConfig.gamescaleY*784,'QRcode').setAlpha(0);
-    QRcode.scaleX = scaleConfig.gamescaleX;
-    QRcode.scaleY = scaleConfig.gamescaleY;
+    // QRcode = this.add.sprite(scaleConfig.gamescaleX*376,scaleConfig.gamescaleY*784,'QRcode').setAlpha(0);
+    // QRcode.scaleX = scaleConfig.gamescaleX;
+    // QRcode.scaleY = scaleConfig.gamescaleY;
 
     QRpower = this.add.sprite(scaleConfig.gamescaleX*376,scaleConfig.gamescaleY*980,'QRpower').setAlpha(0);
     QRpower.scaleX = scaleConfig.gamescaleX;
     QRpower.scaleY = scaleConfig.gamescaleY;
 
+    para = document.createElement("img");
+    para.src = 'http://p688ihx0v.bkt.clouddn.com/QRcode.png';
+    node = document.getElementById("content");
+    node.appendChild(para);
+    para.style.opacity = 0;
+    para.className = 'QR';
     }
     update(){
         coffee.rotation += 0.01;
@@ -100,7 +107,8 @@ class QRcodeScene extends Phaser.Scene{
             {
                 if(alphaC <=1){
                     alphaC += 0.008;
-                    QRcode.setAlpha(alphaC);
+                    // QRcode.setAlpha(alphaC);
+                    para.style.opacity = alphaC;
                 }
             },
             callbackScope: this,    

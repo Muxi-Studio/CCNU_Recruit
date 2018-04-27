@@ -32,13 +32,13 @@ module.exports = {
     definePlugin,
     new CleanWebpackPlugin(['build']),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    /*new webpack.optimize.UglifyJsPlugin({
-      drop_console: true,
-      minimize: true,
-      output: {
-        comments: false
-      }
-    }),*/
+    // new webpack.optimize.UglifyJsPlugin({
+    //   drop_console: true,
+    //   minimize: true,
+    //   output: {
+    //     comments: false
+    //   }
+    // }),
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' /* chunkName= */, filename: 'js/vendor.bundle.js' /* filename= */ }),
     new HtmlWebpackPlugin({
       filename: 'index.html', // path.resolve(__dirname, 'build', 'index.html'),

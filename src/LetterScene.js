@@ -19,7 +19,7 @@ class LetterScene extends Phaser.Scene {
       key: 'LetterScene',
       
       files:[
-        {type:"image",key:"loading-background",url:"http://p688ihx0v.bkt.clouddn.com/loading-background-new.png"},
+        {type:"image",key:"loading-background",url:"http://p688ihx0v.bkt.clouddn.com/loading-background-new.jpg"},
      //   {type:"image",key:"loading-planegif",url:"http://p688ihx0v.bkt.clouddn.com/loadingGif.gif" }
    
 
@@ -187,7 +187,6 @@ class LetterScene extends Phaser.Scene {
 
     var drag = false;
 
-   
     this.input.on('pointermove', function() {
       drag = true;
     }, this)
