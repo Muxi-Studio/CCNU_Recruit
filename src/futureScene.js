@@ -8,18 +8,13 @@ alphaM = alpha1 = alpha2 = alpha3 = 0;
 class futureScene extends Phaser.Scene{
     constructor(){
         super({
-            key:"futureScene"
+            key:"FutureScene"
         });
     }
 
     preload() {
-        this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
-        this.load.image('coffee','http://p688ihx0v.bkt.clouddn.com/coffee.png');
-        this.load.image('water-mark','http://p688ihx0v.bkt.clouddn.com/waterMark.png');
-        this.load.image('school-gate','http://p688ihx0v.bkt.clouddn.com/schoolGate.png');
-        this.load.image('future-word1','http://p688ihx0v.bkt.clouddn.com/future-word1.png');
-        this.load.image('future-word2','http://p688ihx0v.bkt.clouddn.com/future-word2.png');
-        this.load.image('future-word3','http://p688ihx0v.bkt.clouddn.com/future-word3.png');
+
+   
 
     }
     create() {
@@ -53,8 +48,22 @@ class futureScene extends Phaser.Scene{
         waterMark.scaleX = scaleConfig.gamescaleX;
         waterMark.scaleY = scaleConfig.gamescaleY;
 
+        var drag = false;
+
+    this.input.on('pointermove', function() {
+      drag = true;
+    }, this)
+
+    this.input.on('pointerup', function() {
+      if (drag) {
+        this.scene.start('QRcodeScene');
+      }
+    }, this);
+  
     }
     update(){
+        coffee.rotation += 0.01;
+        if (leaves.rotation < 0.4) leaves.rotation += 0.005;
         this.time.addEvent({
             delay: 1000,
             callback: function ()

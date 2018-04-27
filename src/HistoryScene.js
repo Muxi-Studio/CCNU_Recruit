@@ -77,15 +77,8 @@ class HistoryScene extends Phaser.Scene {
 
     this.input.on('pointerup', function() {
       if (drag) {
-        historyWord1.destroy();
-        historyWord2.destroy();
-        historyPhoto1.destroy();
-        historyPhoto2.destroy();
-        historyPhoto3.destroy();
-        historyPhoto4.destroy();
-        historyPhoto5.destroy();
-        historyPhoto6.destroy();
-       // this.scene.start('ChildrenScene');
+        
+        this.scene.start('RecruitScene');
       }
     }, this);
   }

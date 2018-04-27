@@ -25,7 +25,7 @@ class childrenScene extends Phaser.Scene {
     leaves.scaleX = scaleConfig.gamescaleX;
     leaves.scaleY = scaleConfig.gamescaleY;
     
-    schoolHouse  = this.matter.add.image(scaleConfig.gamescaleX*376,scaleConfig.gamescaleY*300,'school-house',null,{friction:0.005, restitution:2});
+    schoolHouse  = this.matter.add.sprite(scaleConfig.gamescaleX*376,scaleConfig.gamescaleY*300,'school-house',null,{friction:0.005, restitution:2});
     // schoolHouse = this.add.sprite(scaleConfig.gamescaleX*376,scaleConfig.gamescaleY*390,'school-house');
     schoolHouse.scaleX = scaleConfig.gamescaleX;
     schoolHouse.scaleY = scaleConfig.gamescaleY;
@@ -47,11 +47,7 @@ class childrenScene extends Phaser.Scene {
 
     this.input.on('pointerup', function() {
       if (drag) {
-        schoolHouse .destroy();
-        childWord1.destroy();
-        childWord2.destroy();
-        
-        this.scene.start('ChildrenScene');
+        this.scene.start('FutureScene');
       }
     }, this);
   

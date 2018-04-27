@@ -75,13 +75,7 @@ class GuideScene extends Phaser.Scene {
 
     this.input.on('pointerup', function() {
       if (drag) {
-        dinner.destroy();
-        packageImage.destroy();
-        northGate.destroy();
-        guideWord1.destroy();
-        guideWord2.destroy();
-        guideWord3.destroy();
-        guideWord4.destroy();
+        
         this.scene.start('TeacherScene');
       }
     }, this)

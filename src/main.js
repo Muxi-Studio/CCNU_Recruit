@@ -1,16 +1,15 @@
 import 'phaser';
-import WelfareScene from './welfareScene';
+
 import LetterScene from './letterScene';
 import GuideScene from './GuideScene';
 import scaleConfig from './common';
 import TeacherScene from './teacherScene';
 import LoveScene from './loveScene';
 import HistoryScene from './historyScene';
-//import GuideScene from './GuideScene';
-import recruitScene from './recruitScene';
+import RecruitScene from './recruitScene'
 import ChildrenScene from './childrenScene'
 import QRcodeScene from './QRcodeScene';
-import futureScene from './futureScene'
+import FutureScene from './futureScene'
 
 let config = {
     type: Phaser.AUTO,
@@ -19,13 +18,14 @@ let config = {
     height: scaleConfig.gameheight,
     scaleMode: 0, //Phaser.ScaleManager.EXACT_FIT,
     scene: [
-        LetterScene,
+         LetterScene,
         GuideScene,
         TeacherScene,
         LoveScene,
         HistoryScene,
+        RecruitScene, 
         ChildrenScene,
-        WelfareScene,
+        FutureScene,
         QRcodeScene,
     ],
     physics:{

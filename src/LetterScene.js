@@ -18,7 +18,7 @@ class LetterScene extends Phaser.Scene {
       
       files:[
         {type:"image",key:"loading-background",url:"http://p688ihx0v.bkt.clouddn.com/loading-background-new.png"},
-        {type:"image",key:"loading-planesheet",url:"../assets/loading-planesheet.png" }
+       // {type:"image",key:"loading-planesheet",url:"../assets/loading-planesheet.png" }
        // {type:"image",key:"loading-planesheet",url:"../assets/loading-planesheet.png", frameWidth: 5328, frameHeight: 364 }
 
       ]
@@ -34,18 +34,18 @@ class LetterScene extends Phaser.Scene {
     loadingBack = this.add.sprite(scaleConfig.moveX,scaleConfig.moveY,'loading-background');
     loadingBack.scaleX = scaleConfig.gamescaleX;
     loadingBack.scaleY = scaleConfig.gamescaleY; 
-    loadingPlane = this.add.sprite(scaleConfig.gamescaleX*314,scaleConfig.gamescaleY*468,'loading-planesheet');
-    loadingPlane.scaleX = scaleConfig.gamescaleX;
-    loadingPlane.scaleY = scaleConfig.gamescaleY;
-    this.anims.create({
-      key: 'fly',
-      frames: this.anims.generateFrameNumbers('loading-planesheet', { start: 0, end: 10 }),
-      frameRate: 10,
-      repeat: -1
-  });
+  //   loadingPlane = this.add.sprite(scaleConfig.gamescaleX*314,scaleConfig.gamescaleY*468,'loading-planesheet');
+  //   loadingPlane.scaleX = scaleConfig.gamescaleX;
+  //   loadingPlane.scaleY = scaleConfig.gamescaleY;
+  //   this.anims.create({
+  //     key: 'fly',
+  //     frames: this.anims.generateFrameNumbers('loading-planesheet', { start: 0, end: 10 }),
+  //     frameRate: 10,
+  //     repeat: -1
+  // });
  
-  console.log(loadingPlane.frame)
-  loadingPlane.anims.play('fly',true);
+  // console.log(loadingPlane.frame)
+  // loadingPlane.anims.play('fly',true);
   //   var config = {
   //     key: 'flash',
   //     frames: this.anims.generateFrameNumbers('loading-planesheet', { start: 0, end: 10 }),
@@ -127,10 +127,34 @@ class LetterScene extends Phaser.Scene {
       this.load.image('historyPhoto4', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto4.png');
       this.load.image('historyPhoto5', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto5.png');
       this.load.image('historyPhoto6', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto6.png');
-      //child
-      this.load.image('school-house','http://p688ihx0v.bkt.clouddn.com/welfareSchoolHouse.png');
-      this.load.image('children-word1','http://p688ihx0v.bkt.clouddn.com/children-word1.png');
-      this.load.image('children-word2','http://p688ihx0v.bkt.clouddn.com/children-word2.png');
+
+      //recruit
+      this.load.image('recruit-light','http://p688ihx0v.bkt.clouddn.com/recruit-light.png');
+      this.load.image('recruit-word1','http://p688ihx0v.bkt.clouddn.com/recruit-word1.png');
+      this.load.image('recruit-word2','http://p688ihx0v.bkt.clouddn.com/recruit-word2.png');
+      this.load.image('recruit-word3','http://p688ihx0v.bkt.clouddn.com/recruit-word3.png');
+      this.load.image('recruit-word4','http://p688ihx0v.bkt.clouddn.com/recruit-word4.png');
+
+       //child
+       this.load.image('school-house','http://p688ihx0v.bkt.clouddn.com/welfareSchoolHouse.png');
+       this.load.image('children-word1','http://p688ihx0v.bkt.clouddn.com/children-word1.png');
+       this.load.image('children-word2','http://p688ihx0v.bkt.clouddn.com/children-word2.png');
+      //future
+      this.load.image('water-mark','http://p688ihx0v.bkt.clouddn.com/waterMark.png');
+      this.load.image('school-gate','http://p688ihx0v.bkt.clouddn.com/schoolGate.png');
+      this.load.image('future-word1','http://p688ihx0v.bkt.clouddn.com/future-word1.png');
+      this.load.image('future-word2','http://p688ihx0v.bkt.clouddn.com/future-word2.png');
+
+      //QRcode
+     
+      this.load.image('QRcode','http://p688ihx0v.bkt.clouddn.com/QRcode.png');
+      this.load.image('QRbell','http://p688ihx0v.bkt.clouddn.com/QRbell.png');
+      this.load.image('QRword1','http://p688ihx0v.bkt.clouddn.com/QRcode-word1.png');
+      this.load.image('QRword2','http://p688ihx0v.bkt.clouddn.com/QRcode-word2.png');
+      this.load.image('QRword3','http://p688ihx0v.bkt.clouddn.com/QRcode-word3.png');
+      this.load.image('QRpower','http://p688ihx0v.bkt.clouddn.com/QRcode-power.png')
+     
+     
       
     loadingText = this.add.text(scaleConfig.moveX-scaleConfig.gamescaleX*90, scaleConfig.moveY-scaleConfig.gamescaleY*65, '努力加载中', {
       fontSize: '20px',
@@ -190,14 +214,8 @@ class LetterScene extends Phaser.Scene {
     
     this.input.on('pointerup', function() {
       if (drag) {
-
-        loadingBack.destroy()
-        background.destroy();
-        arrow.destroy();
-        letter.destroy();
-        letterCover.destroy();
-        camera.destroy();
-        start.destroy();
+      
+        
         this.scene.start('GuideScene');
       }
     }, this)

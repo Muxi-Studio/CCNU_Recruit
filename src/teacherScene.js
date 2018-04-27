@@ -63,10 +63,7 @@ class TeacherScene extends Phaser.Scene {
 
     this.input.on('pointerup', function() {
       if (drag) {
-        hat.destroy();
-        teacherWord1.destroy();
-        teacherWord2.destroy();
-        teacherWord3.destroy();
+       
         this.scene.start('LoveScene');
       }
     }, this)

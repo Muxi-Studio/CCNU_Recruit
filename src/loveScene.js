@@ -1,7 +1,7 @@
 import Animated from 'phaser-animated-tiles';
 import scaleConfig from './common';
 
-var art, road, tree, loveWord1, loveWord2, loveWord3;
+var art, road, tree, loveWord1, loveWord2, loveWord3,background,coffee,leaves;
 var alpha1 = 0;
 var alpha2 = 0;
 var alpha3 = 0;
@@ -87,12 +87,7 @@ class LoveScene extends Phaser.Scene {
     // }, this);
     this.input.on('pointerup', function() {
       if (drag) {
-        loveWord1.destroy();
-        road.destroy();
-        loveWord2.destroy();
-        art.destroy();
-        loveWord3.destroy();
-        tree.destroy();
+        
         this.scene.start('HistoryScene');
       }
     }, this)

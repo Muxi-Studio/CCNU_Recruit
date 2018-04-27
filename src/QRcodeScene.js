@@ -14,15 +14,8 @@ class QRcodeScene extends Phaser.Scene{
        
     }
     preload() {
-        this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
-        this.load.image('coffee','http://p688ihx0v.bkt.clouddn.com/coffee.png');
-        this.load.image('water-mark','http://p688ihx0v.bkt.clouddn.com/waterMark.png');
-        this.load.image('QRcode','http://p688ihx0v.bkt.clouddn.com/QRcode.png');
-        this.load.image('QRbell','http://p688ihx0v.bkt.clouddn.com/QRbell.png');
-        this.load.image('QRword1','http://p688ihx0v.bkt.clouddn.com/QRcode-word1.png');
-        this.load.image('QRword2','http://p688ihx0v.bkt.clouddn.com/QRcode-word2.png');
-        this.load.image('QRword3','http://p688ihx0v.bkt.clouddn.com/QRcode-word3.png');
-        this.load.image('QRpower','http://p688ihx0v.bkt.clouddn.com/QRcode-power.png')
+      
+       
     }
     create() {
         //设置位置和图片缩放比例
@@ -65,6 +58,8 @@ class QRcodeScene extends Phaser.Scene{
 
     }
     update(){
+        coffee.rotation += 0.01;
+      
         if(rotaFlag === 0 ){
             QRbell.rotation += 0.005;
             if (QRbell.rotation >= 0.3) {
