@@ -67,35 +67,7 @@ class GuideScene extends Phaser.Scene {
     guideWord4.scaleX = scaleConfig.gamescaleX;
     guideWord4.scaleY = scaleConfig.gamescaleY;
 
-    // let drag = false;
-
-    // this.input.on('pointermove', function() {
-    //   drag = true;
-    // }, this)
-
-    // this.input.on('pointerup', function() {
-    //   if (drag) {
-    //     dinner.destroy();
-    //     packageImage.destroy();
-    //     northGate.destroy();
-    //     guideWord1.destroy();
-    //     guideWord2.destroy();
-    //     guideWord3.destroy();
-    //     guideWord4.destroy();
-    //     this.scene.launch('TeacherScene');
-    //   }
-    // }, this)
-  //   this.input.once('pointerdown', function () {
-  //     dinner.destroy();
-  //     packageImage.destroy();
-  //     northGate.destroy();
-  //     guideWord1.destroy();
-  //     guideWord2.destroy();
-  //     guideWord3.destroy();
-  //     guideWord4.destroy();
-  //     this.scene.launch('TeacherScene');
-  //  }, this);
-    var drag = false;
+    let drag = false;
 
     this.input.on('pointermove', function() {
       drag = true;

@@ -25,8 +25,8 @@ let config = {
         LoveScene,
         HistoryScene,
         ChildrenScene,
-        // WelfareScene,
-        // QRcodeScene,
+        WelfareScene,
+        QRcodeScene,
     ],
     physics:{
         default:'matter',
