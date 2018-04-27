@@ -4,8 +4,7 @@ var alpha2 = 0;
 var alpha3 = 0;
 var alpha4 = 0;
 var background,leaves,coffee,recruitLight,recruitWord1,recruitWord2,recruitWord3,recruitWord4;
-
-;
+var slideFlag = false;
 class childrenScene extends Phaser.Scene {
     constructor(){
         super({
@@ -25,7 +24,7 @@ class childrenScene extends Phaser.Scene {
     coffee.scaleX = scaleConfig.gamescaleX;
     coffee.scaleY = scaleConfig.gamescaleY;
 
-    recruitLight = this.add.sprite(170 * scaleConfig.gamescaleX, 1130 * scaleConfig.gamescaleY, 'recruit-light');
+    recruitLight = this.add.sprite(150 * scaleConfig.gamescaleX, 1130 * scaleConfig.gamescaleY, 'recruit-light');
     recruitLight.scaleX = scaleConfig.gamescaleX;
     recruitLight.scaleY = scaleConfig.gamescaleY;
 
@@ -57,7 +56,9 @@ class childrenScene extends Phaser.Scene {
     }, this)
 
     this.input.on('pointerup', function() {
-        this.scene.start('ChildrenScene');
+        if(drag && slideFlag){
+            this.scene.start('ChildrenScene');
+        }
     }, this);
   
     }
@@ -107,6 +108,10 @@ class childrenScene extends Phaser.Scene {
                 if(alpha4<=1){
                     alpha4 += 0.008;
                     recruitWord4.setAlpha(alpha4);
+                }
+                if(alpha4 >= 1){
+                    slideFlag = true;
+                   // console.log()
                 }
             },
             callbackScope: this,

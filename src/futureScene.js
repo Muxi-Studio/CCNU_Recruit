@@ -5,6 +5,7 @@ var schoolGate,waterMark,futureWord1,futureWord2;
 var background,coffee,leaves;
 var alphaM , alpha1 ,alpha2 , alpha3;
 alphaM = alpha1 = alpha2 = alpha3 = 0;
+var slideFlag = false;
 class futureScene extends Phaser.Scene{
     constructor(){
         super({
@@ -55,7 +56,7 @@ class futureScene extends Phaser.Scene{
     }, this)
 
     this.input.on('pointerup', function() {
-      if (drag) {
+      if (drag &&  slideFlag ) {
         this.scene.start('QRcodeScene');
       }
     }, this);
@@ -105,6 +106,9 @@ class futureScene extends Phaser.Scene{
                 if(alpha3<=1){
                     alpha3 += 0.008;
                     waterMark.setAlpha(alpha3);
+                }
+                if(alpha3 >= 1){
+                    slideFlag = true;
                 }
             },
             callbackScope: this,    

@@ -6,6 +6,7 @@ var coffee, leaves, teacherWord1,teacherWord2, teacherWord3;
 var alpha1 = 0;
 var alpha2 = 0;
 var alpha3 = 0;
+var slideFlag = false;
 
 
 class TeacherScene extends Phaser.Scene {
@@ -62,7 +63,7 @@ class TeacherScene extends Phaser.Scene {
     }, this)
 
     this.input.on('pointerup', function() {
-      if (drag) {
+      if (drag && slideFlag) {
        
         this.scene.start('LoveScene');
       }
@@ -102,6 +103,9 @@ class TeacherScene extends Phaser.Scene {
         if(alpha3 <= 1){
           alpha3 += 0.008;
           teacherWord3.setAlpha(alpha3);
+        }
+        if(alpha3>=1){
+          slideFlag = true;
         }
       },
       callbackScope: this

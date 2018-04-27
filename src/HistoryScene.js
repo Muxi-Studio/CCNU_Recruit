@@ -10,6 +10,7 @@ var alpha5 = 0;
 var alpha6 = 0;
 var alpha7 = 0;
 var alpha8 = 0;
+var slideFlag = false;
 
 class HistoryScene extends Phaser.Scene {
   constructor(test) {
@@ -76,7 +77,7 @@ class HistoryScene extends Phaser.Scene {
     }, this)
 
     this.input.on('pointerup', function() {
-      if (drag) {
+      if (drag && slideFlag ) {
         
         this.scene.start('RecruitScene');
       }
@@ -179,6 +180,9 @@ class HistoryScene extends Phaser.Scene {
         if(alpha8 <= 1){
           alpha8 += 0.015;
           historyPhoto6.setAlpha(alpha8);
+        }
+        if(alpha8 >= 1){
+          slideFlag = true;
         }
       },
       callbackScope: this

@@ -5,6 +5,7 @@ var art, road, tree, loveWord1, loveWord2, loveWord3,background,coffee,leaves;
 var alpha1 = 0;
 var alpha2 = 0;
 var alpha3 = 0;
+var slideFlag = false;
 
 class LoveScene extends Phaser.Scene {
   constructor(test) {
@@ -65,28 +66,8 @@ class LoveScene extends Phaser.Scene {
       drag = true;
     }, this)
 
-    // this.input.on('pointerup', function() {
-    //   if (drag) {
-    //     loveWord1.destroy();
-    //     road.destroy();
-    //     loveWord2.destroy();
-    //     art.destroy();
-    //     loveWord3.destroy();
-    //     tree.destroy();
-    //     this.scene.launch('HistoryScene');
-    //   }
-    // }, this)
-    // this.input.once('pointerdown', function () {
-    //   loveWord1.destroy();
-    //   road.destroy();
-    //   loveWord2.destroy();
-    //   art.destroy();
-    //   loveWord3.destroy();
-    //   tree.destroy();
-    //   this.scene.launch('HistoryScene');
-    // }, this);
     this.input.on('pointerup', function() {
-      if (drag) {
+      if (drag && slideFlag) {
         
         this.scene.start('HistoryScene');
       }
@@ -133,6 +114,9 @@ class LoveScene extends Phaser.Scene {
           loveWord3.setAlpha(alpha3);
           tree.setAlpha(alpha3);
           if (tree.y <= 980 * scaleConfig.gamescaleY) tree.y += 4;
+        }
+        if(alpha3 >= 1){
+          slideFlag = true;
         }
       },
       callbackScope: this

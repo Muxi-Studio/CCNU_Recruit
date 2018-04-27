@@ -2,6 +2,7 @@ import scaleConfig  from './common';
 var alpha1 = 0;
 var alpha2 = 0;
 var background,schoolHouse,coffee,leaves,childWord1, childWord2;
+var slideFlag = false;
 class childrenScene extends Phaser.Scene {
     constructor(){
         super({
@@ -73,6 +74,9 @@ class childrenScene extends Phaser.Scene {
                 if(alpha2<=1){
                     alpha2 += 0.008;
                     childWord2.setAlpha(alpha2);
+                }
+                if(alpha2 >= 1){
+                    slideFlag = true;
                 }
             },
             callbackScope: this,

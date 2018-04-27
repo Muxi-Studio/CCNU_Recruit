@@ -5,10 +5,12 @@ import Phaser from 'phaser';
 var arrow, letter, start;
 var loadingText ;
 var flag = 1;
-var loadingBack,loadingPlane,loadingWay;
+var loadingBack,loadingPlane;
 var chax = 0;
 var x=scaleConfig.gamescaleX*314,y=scaleConfig.gamescaleY*468;
 var group;
+var node;
+var para;
 
 
 class LetterScene extends Phaser.Scene {
@@ -18,8 +20,8 @@ class LetterScene extends Phaser.Scene {
       
       files:[
         {type:"image",key:"loading-background",url:"http://p688ihx0v.bkt.clouddn.com/loading-background-new.png"},
-       // {type:"image",key:"loading-planesheet",url:"../assets/loading-planesheet.png" }
-       // {type:"image",key:"loading-planesheet",url:"../assets/loading-planesheet.png", frameWidth: 5328, frameHeight: 364 }
+     //   {type:"image",key:"loading-planegif",url:"http://p688ihx0v.bkt.clouddn.com/loadingGif.gif" }
+   
 
       ]
       
@@ -29,45 +31,16 @@ class LetterScene extends Phaser.Scene {
   
   
   preload() {
- 
-    this.load.audio('bgMusic', 'http://p688ihx0v.bkt.clouddn.com/bgMusic.mp3');
+
+   para = document.createElement("img");
+   para.src = 'http://p688ihx0v.bkt.clouddn.com/loadingGif.gif';
+   node = document.getElementById("content");
+   node.appendChild(para);
+   this.load.audio('bgMusic', 'http://p688ihx0v.bkt.clouddn.com/bgMusic.mp3');
     loadingBack = this.add.sprite(scaleConfig.moveX,scaleConfig.moveY,'loading-background');
     loadingBack.scaleX = scaleConfig.gamescaleX;
     loadingBack.scaleY = scaleConfig.gamescaleY; 
-  //   loadingPlane = this.add.sprite(scaleConfig.gamescaleX*314,scaleConfig.gamescaleY*468,'loading-planesheet');
-  //   loadingPlane.scaleX = scaleConfig.gamescaleX;
-  //   loadingPlane.scaleY = scaleConfig.gamescaleY;
-  //   this.anims.create({
-  //     key: 'fly',
-  //     frames: this.anims.generateFrameNumbers('loading-planesheet', { start: 0, end: 10 }),
-  //     frameRate: 10,
-  //     repeat: -1
-  // });
- 
-  // console.log(loadingPlane.frame)
-  // loadingPlane.anims.play('fly',true);
-  //   var config = {
-  //     key: 'flash',
-  //     frames: this.anims.generateFrameNumbers('loading-planesheet', { start: 0, end: 10 }),
-  //     frameRate: 11,
-  //     yoyo: true,
-  //     repeat: -1
-  // };
-  // this.anims.create(config);
 
-  //   var group = this.add.group();
-
-  //   //group.createMultiple({ key: 'planes', frame: 0, repeat: 10 });
-
-  //   Phaser.Actions.GridAlign(group.getChildren(), { width: 368, height: 364, cellWidth: 368, x: 400, y: 300 });
-
-  //   this.anims.play('flash', group.getChildren(), 1);
-    // loadingPlane = this.add.sprite(scaleConfig.gamescaleX*314,scaleConfig.gamescaleY*468,'loading-plane0');
-    // loadingPlane.scaleX = scaleConfig.gamescaleX;
-    // loadingPlane.scaleY = scaleConfig.gamescaleY;
-    // loadingWay = this.add.sprite(scaleConfig.gamescaleX*154,scaleConfig.gamescaleY*468,'loading-way');
-    // loadingWay.scaleX = scaleConfig.gamescaleX;
-    // loadingWay.scaleY = scaleConfig.gamescaleY;
 
     function loadingWordChange(){
         if(loadingText.text == '努力加载中'){
@@ -171,6 +144,9 @@ class LetterScene extends Phaser.Scene {
       if(value!==1){
         loadingWordChange();
       }
+     
+       
+      
       progressText.setText(Math.round(value * 100) + '%');
   });
   
@@ -178,6 +154,10 @@ class LetterScene extends Phaser.Scene {
   
   }
   create() {
+
+    node.removeChild(para);
+
+
     var bgMusic = this.sound.add('bgMusic');
     bgMusic.play();
 

@@ -6,6 +6,7 @@ var alpha1 = 0;
 var alpha2 = 0;
 var alpha3 = 0;
 var alpha4 = 0;
+var slideFlag = false;
 
 class GuideScene extends Phaser.Scene {
   constructor(load) {
@@ -74,7 +75,7 @@ class GuideScene extends Phaser.Scene {
     }, this)
 
     this.input.on('pointerup', function() {
-      if (drag) {
+      if (drag && slideFlag) {
         
         this.scene.start('TeacherScene');
       }
@@ -136,6 +137,9 @@ class GuideScene extends Phaser.Scene {
           alpha4 += 0.008;
           guideWord4.setAlpha(alpha4);
           northGate.setAlpha(alpha4);
+        }
+       if(alpha4 >= 1){
+          slideFlag = true;
         }
       },
       callbackScope: this
