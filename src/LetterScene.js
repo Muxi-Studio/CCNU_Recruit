@@ -1,5 +1,6 @@
 import Animated from 'phaser-animated-tiles';
 import scaleConfig from './common';
+import Phaser from 'phaser';
 
 var arrow, letter, start;
 var loadingText ;
@@ -15,9 +16,9 @@ class LetterScene extends Phaser.Scene {
     super({
       key: 'LetterScene',
       files:[
-        {type:"image",key:"loading-background",url:"http://p688ihx0v.bkt.clouddn.com/loading-background.png"},
-        // {type:"image",key:"loading-plane",url:"../assets/loading-plane.png"},
-        // {type:"image",key:"loading-way",url:"../assets/loading-way.png"}
+        {type:"image",key:"loading-background",url:"http://p688ihx0v.bkt.clouddn.com/loading-background-new.png"},
+        {type:"image",key:"loading-planesheet",url:"../assets/loading-planesheet.png", frameWidth: 5328, frameHeight: 364 }
+
       ]
     });
    
@@ -29,12 +30,29 @@ class LetterScene extends Phaser.Scene {
     loadingBack = this.add.sprite(scaleConfig.moveX,scaleConfig.moveY,'loading-background');
     loadingBack.scaleX = scaleConfig.gamescaleX;
     loadingBack.scaleY = scaleConfig.gamescaleY; 
-    loadingPlane = this.add.sprite(scaleConfig.gamescaleX*314,scaleConfig.gamescaleY*468,'loading-plane');
-    loadingPlane.scaleX = scaleConfig.gamescaleX;
-    loadingPlane.scaleY = scaleConfig.gamescaleY;
-    loadingWay = this.add.sprite(scaleConfig.gamescaleX*154,scaleConfig.gamescaleY*468,'loading-way');
-    loadingWay.scaleX = scaleConfig.gamescaleX;
-    loadingWay.scaleY = scaleConfig.gamescaleY;
+    
+  //   var config = {
+  //     key: 'flash',
+  //     frames: this.anims.generateFrameNumbers('loading-planesheet', { start: 0, end: 10 }),
+  //     frameRate: 11,
+  //     yoyo: true,
+  //     repeat: -1
+  // };
+  // this.anims.create(config);
+
+  //   var group = this.add.group();
+
+  //   //group.createMultiple({ key: 'planes', frame: 0, repeat: 10 });
+
+  //   Phaser.Actions.GridAlign(group.getChildren(), { width: 368, height: 364, cellWidth: 368, x: 400, y: 300 });
+
+  //   this.anims.play('flash', group.getChildren(), 1);
+    // loadingPlane = this.add.sprite(scaleConfig.gamescaleX*314,scaleConfig.gamescaleY*468,'loading-plane0');
+    // loadingPlane.scaleX = scaleConfig.gamescaleX;
+    // loadingPlane.scaleY = scaleConfig.gamescaleY;
+    // loadingWay = this.add.sprite(scaleConfig.gamescaleX*154,scaleConfig.gamescaleY*468,'loading-way');
+    // loadingWay.scaleX = scaleConfig.gamescaleX;
+    // loadingWay.scaleY = scaleConfig.gamescaleY;
 
     function loadingWordChange(){
         if(loadingText.text == '努力加载中'){
@@ -52,15 +70,49 @@ class LetterScene extends Phaser.Scene {
         }
       }
     
+   
   
-
+ 
     this.load.image('letterBackground','http://p688ihx0v.bkt.clouddn.com/letterBackground.png');
     this.load.image('letterCover', 'http://p688ihx0v.bkt.clouddn.com/letterCover.png');
     this.load.image('letter', 'http://p688ihx0v.bkt.clouddn.com/letter.png');
     this.load.image('arrow', 'http://p688ihx0v.bkt.clouddn.com/arrow.png');
     this.load.image('camera', 'http://p688ihx0v.bkt.clouddn.com/camera.png');
     this.load.image('start', 'http://p688ihx0v.bkt.clouddn.com/startRead.png');
-   
+      //Guide
+    this.load.audio('bgMusic', 'http://p688ihx0v.bkt.clouddn.com/bgMusic.mp3');
+    this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
+    this.load.image('coffee', 'http://p688ihx0v.bkt.clouddn.com/coffee.png');
+    this.load.image('leaves', 'http://p688ihx0v.bkt.clouddn.com/leaves.png');
+    this.load.image('dinner', 'http://p688ihx0v.bkt.clouddn.com/eat.png');
+    this.load.image('packageImage', 'http://p688ihx0v.bkt.clouddn.com/packageImage.png');
+    this.load.image('northGate', 'http://p688ihx0v.bkt.clouddn.com/northGate.png');
+    this.load.image('guideWord1', 'http://p688ihx0v.bkt.clouddn.com/guideWord1.png');
+    this.load.image('guideWord2', 'http://p688ihx0v.bkt.clouddn.com/guideWord2.png');
+    this.load.image('guideWord3', 'http://p688ihx0v.bkt.clouddn.com/guideWord3.png');
+    this.load.image('guideWord4', 'http://p688ihx0v.bkt.clouddn.com/guideWord4.png'); 
+     // Teacher
+    this.load.image('hat', 'http://p688ihx0v.bkt.clouddn.com/hat.png');
+    this.load.image('teacherWord1', 'http://p688ihx0v.bkt.clouddn.com/teacherWord1.png');
+    this.load.image('teacherWord2', 'http://p688ihx0v.bkt.clouddn.com/teacherWord2.png');
+    this.load.image('teacherWord3', 'http://p688ihx0v.bkt.clouddn.com/teacherWord3.png'); 
+      //love
+      this.load.image('road', 'http://p688ihx0v.bkt.clouddn.com/road.png');
+      this.load.image('tree', 'http://p688ihx0v.bkt.clouddn.com/tree.png');
+      this.load.image('art', 'http://p688ihx0v.bkt.clouddn.com/art.png');
+      this.load.image('loveWord1', 'http://p688ihx0v.bkt.clouddn.com/loveWord1.png');
+      this.load.image('loveWord2', 'http://p688ihx0v.bkt.clouddn.com/loveWord2.png');
+      this.load.image('loveWord3', 'http://p688ihx0v.bkt.clouddn.com/loveWord3.png');
+      //history
+      this.load.image('historyWord1', 'http://p688ihx0v.bkt.clouddn.com/historyWord1.png');
+      this.load.image('historyWord2', 'http://p688ihx0v.bkt.clouddn.com/historyWord2.png');
+      this.load.image('historyPhoto1', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto1.png');
+      this.load.image('historyPhoto2', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto2.png');
+      this.load.image('historyPhoto3', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto3.png');
+      this.load.image('historyPhoto4', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto4.png');
+      this.load.image('historyPhoto5', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto5.png');
+      this.load.image('historyPhoto6', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto6.png');
+
     loadingText = this.add.text(scaleConfig.moveX-scaleConfig.gamescaleX*90, scaleConfig.moveY-scaleConfig.gamescaleY*65, '努力加载中', {
       fontSize: '20px',
       fill: 'rgb(173,151,138)'
@@ -69,24 +121,22 @@ class LetterScene extends Phaser.Scene {
       fontSize: '20px',
       fill: 'rgb(83,67,58)'
     });
-   // progressText.tint = 'rgb(173,151,138)';
-  let oldx = x;
-  this.load.on('progress', function(value)
-  {
-     if(value!==1){
-       loadingWordChange();
-     } 
+ 
+  
+  
+    this.load.on('progress', function(value){
+      if(value!==1){
+        loadingWordChange();
+      }
       progressText.setText(Math.round(value * 100) + '%');
   });
+  
+  
   
   }
   create() {
     var bgMusic = this.sound.add('bgMusic');
     bgMusic.play();
-     
-    // var loadingBackground = this.add.sprite(scaleConfig.moveX, scaleConfig.moveY, 'loading-background');
-    // loadingBackground.scaleX = scaleConfig.gamescaleX;
-    // loadingBackground.scaleY = scaleConfig.gamescaleY;
 
     var background = this.add.sprite(scaleConfig.moveX, scaleConfig.moveY, 'letterBackground');
     background.scaleX = scaleConfig.gamescaleX;
@@ -112,35 +162,28 @@ class LetterScene extends Phaser.Scene {
     start.scaleX = scaleConfig.gamescaleX;
     start.scaleY = scaleConfig.gamescaleY;
 
-    // var drag = false;
+    var drag = false;
 
-    // this.input.on('pointermove', function() {
-    //   drag = true;
-    // }, this)
+    this.input.on('pointermove', function() {
+      drag = true;
+    }, this)
 
-    // this.input.on('pointerup', function() {
-    //   if (drag) {
-    //     background.destroy();
-    //     arrow.destroy();
-    //     letter.destroy();
-    //     letterCover.destroy();
-    //     camera.destroy();
-    //     start.destroy();
-    //     this.scene.launch('GuideScene');
-    //   }
-    // }, this)
-    this.input.once('pointerdown', function () {
-      background.destroy();
-      arrow.destroy();
-      letter.destroy();
-      letterCover.destroy();
-      camera.destroy();
-      start.destroy();
-      this.scene.launch('GuideScene');
-    }, this);
-    
+    this.input.on('pointerup', function() {
+      if (drag) {
+
+        loadingBack.destroy()
+        background.destroy();
+        arrow.destroy();
+        letter.destroy();
+        letterCover.destroy();
+        camera.destroy();
+        start.destroy();
+        this.scene.start('GuideScene');
+      }
+    }, this)
   }
   update() {
+    
     if (letter.y >= 800 * scaleConfig.gamescaleY) {
       letter.y -= 1;
     } else {
@@ -155,7 +198,8 @@ class LetterScene extends Phaser.Scene {
         if (arrow.y == scaleConfig.gamescaleY * 1142) flag = 1;
       }
     }
- }
+  }
+  
     
 }
 export default LetterScene;

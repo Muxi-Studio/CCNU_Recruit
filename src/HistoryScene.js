@@ -21,28 +21,21 @@ class HistoryScene extends Phaser.Scene {
     // this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
     // this.load.image('coffee', 'http://p688ihx0v.bkt.clouddn.com/coffee.png');
     // this.load.image('leaves', 'http://p688ihx0v.bkt.clouddn.com/leaves.png');
-    this.load.image('historyWord1', 'http://p688ihx0v.bkt.clouddn.com/historyWord1.png');
-    this.load.image('historyWord2', 'http://p688ihx0v.bkt.clouddn.com/historyWord2.png');
-    this.load.image('historyPhoto1', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto1.png');
-    this.load.image('historyPhoto2', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto2.png');
-    this.load.image('historyPhoto3', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto3.png');
-    this.load.image('historyPhoto4', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto4.png');
-    this.load.image('historyPhoto5', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto5.png');
-    this.load.image('historyPhoto6', 'http://p688ihx0v.bkt.clouddn.com/historyPhoto6.png');
+
   }
 
   create() {
-    // let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');
-    // background.scaleX = scaleConfig.gamescaleX;
-    // background.scaleY = scaleConfig.gamescaleY;
+    let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');
+    background.scaleX = scaleConfig.gamescaleX;
+    background.scaleY = scaleConfig.gamescaleY;
 
-    // coffee = this.add.image(694 * scaleConfig.gamescaleX, 1182 * scaleConfig.gamescaleY, 'coffee');
-    // coffee.scaleX = scaleConfig.gamescaleX;
-    // coffee.scaleY = scaleConfig.gamescaleY;
+    coffee = this.add.image(694 * scaleConfig.gamescaleX, 1182 * scaleConfig.gamescaleY, 'coffee');
+    coffee.scaleX = scaleConfig.gamescaleX;
+    coffee.scaleY = scaleConfig.gamescaleY;
 
-    // leaves = this.add.image(0, 80 * scaleConfig.gamescaleY, 'leaves').setOrigin(0);
-    // leaves.scaleX = scaleConfig.gamescaleX;
-    // leaves.scaleY = scaleConfig.gamescaleY;
+    leaves = this.add.image(0, 80 * scaleConfig.gamescaleY, 'leaves').setOrigin(0);
+    leaves.scaleX = scaleConfig.gamescaleX;
+    leaves.scaleY = scaleConfig.gamescaleY;
 
     historyWord1 = this.add.sprite(scaleConfig.moveX, 315 * scaleConfig.gamescaleY, 'historyWord1').setAlpha(0);
     historyWord1.scaleX = scaleConfig.gamescaleX;
@@ -76,42 +69,30 @@ class HistoryScene extends Phaser.Scene {
     historyPhoto6.scaleX = scaleConfig.gamescaleX;
     historyPhoto6.scaleY = scaleConfig.gamescaleY;
 
-    // var drag = false;
+    var drag = false;
 
-    // this.input.on('pointermove', function() {
-    //   drag = true;
-    // }, this)
+    this.input.on('pointermove', function() {
+      drag = true;
+    }, this)
 
-    // this.input.on('pointerup', function() {
-    //   if (drag) {
-    //     historyWord1.destroy();
-    //     historyWord2.destroy();
-    //     historyPhoto1.destroy();
-    //     historyPhoto2.destroy();
-    //     historyPhoto3.destroy();
-    //     historyPhoto4.destroy();
-    //     historyPhoto5.destroy();
-    //     historyPhoto6.destroy();
-    //     this.scene.launch('childrenScene');
-    //   }
-    // }, this);
-
-    this.input.once('pointerdown', function () {
-            historyWord1.destroy();
-            historyWord2.destroy();
-            historyPhoto1.destroy();
-            historyPhoto2.destroy();
-            historyPhoto3.destroy();
-            historyPhoto4.destroy();
-            historyPhoto5.destroy();
-            historyPhoto6.destroy();
-            this.scene.launch('childrenScene');
-    },this)
+    this.input.on('pointerup', function() {
+      if (drag) {
+        historyWord1.destroy();
+        historyWord2.destroy();
+        historyPhoto1.destroy();
+        historyPhoto2.destroy();
+        historyPhoto3.destroy();
+        historyPhoto4.destroy();
+        historyPhoto5.destroy();
+        historyPhoto6.destroy();
+        this.scene.start('childrenScene');
+      }
+    }, this);
   }
 
   update() {
-    // coffee.rotation += 0.01;
-    // if (leaves.rotation < 0.4) leaves.rotation += 0.005;
+    coffee.rotation += 0.01;
+    if (leaves.rotation < 0.4) leaves.rotation += 0.005;
     
 
     this.time.addEvent({

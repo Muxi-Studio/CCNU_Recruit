@@ -1,36 +1,28 @@
 import Animated from 'phaser-animated-tiles';
 import scaleConfig from './common';
 
-var coffee, leaves, dinner, packageImage, northGate, guideWord1, guideWord2, guideWord3, guideWord4;
+var coffee, leaves, dinner, packageImage, northGate, guideWord1, guideWord2, guideWord3, guideWord4, background;
 var alpha1 = 0;
 var alpha2 = 0;
 var alpha3 = 0;
 var alpha4 = 0;
 
 class GuideScene extends Phaser.Scene {
-  constructor(test) {
+  constructor(load) {
+   
     super({
-      key: 'GuideScene'
+      key: 'GuideScene',
+      
       
     });
   }
   preload() {
-    this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
-    this.load.image('coffee', 'http://p688ihx0v.bkt.clouddn.com/coffee.png');
-    this.load.image('leaves', 'http://p688ihx0v.bkt.clouddn.com/leaves.png');
-    this.load.image('dinner', 'http://p688ihx0v.bkt.clouddn.com/eat.png');
-    this.load.image('packageImage', 'http://p688ihx0v.bkt.clouddn.com/packageImage.png');
-    this.load.image('northGate', 'http://p688ihx0v.bkt.clouddn.com/northGate.png');
-    this.load.image('guideWord1', 'http://p688ihx0v.bkt.clouddn.com/guideWord1.png');
-    this.load.image('guideWord2', 'http://p688ihx0v.bkt.clouddn.com/guideWord2.png');
-    this.load.image('guideWord3', 'http://p688ihx0v.bkt.clouddn.com/guideWord3.png');
-    this.load.image('guideWord4', 'http://p688ihx0v.bkt.clouddn.com/guideWord4.png');
+   
   }
   
   create() {
-    
-
-    let background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');
+   
+    background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');
     background.scaleX = scaleConfig.gamescaleX;
     background.scaleY = scaleConfig.gamescaleY;
 
@@ -93,16 +85,34 @@ class GuideScene extends Phaser.Scene {
     //     this.scene.launch('TeacherScene');
     //   }
     // }, this)
-    this.input.once('pointerdown', function () {
-      dinner.destroy();
-      packageImage.destroy();
-      northGate.destroy();
-      guideWord1.destroy();
-      guideWord2.destroy();
-      guideWord3.destroy();
-      guideWord4.destroy();
-      this.scene.launch('TeacherScene');
-   }, this);
+  //   this.input.once('pointerdown', function () {
+  //     dinner.destroy();
+  //     packageImage.destroy();
+  //     northGate.destroy();
+  //     guideWord1.destroy();
+  //     guideWord2.destroy();
+  //     guideWord3.destroy();
+  //     guideWord4.destroy();
+  //     this.scene.launch('TeacherScene');
+  //  }, this);
+    var drag = false;
+
+    this.input.on('pointermove', function() {
+      drag = true;
+    }, this)
+
+    this.input.on('pointerup', function() {
+      if (drag) {
+        dinner.destroy();
+        packageImage.destroy();
+        northGate.destroy();
+        guideWord1.destroy();
+        guideWord2.destroy();
+        guideWord3.destroy();
+        guideWord4.destroy();
+        this.scene.start('TeacherScene');
+      }
+    }, this)
   }
   update() {
     coffee.rotation += 0.01;
@@ -164,7 +174,7 @@ class GuideScene extends Phaser.Scene {
       },
       callbackScope: this
     });
-  }
+   }
 }
 
 export default GuideScene;
