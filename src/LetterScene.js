@@ -129,11 +129,11 @@ class LetterScene extends Phaser.Scene {
      
      
       
-    loadingText = this.add.text(scaleConfig.moveX-scaleConfig.gamescaleX*90, scaleConfig.moveY-scaleConfig.gamescaleY*65, '努力加载中', {
+    loadingText = this.add.text(scaleConfig.moveX-scaleConfig.gamescaleX*80, scaleConfig.moveY-scaleConfig.gamescaleY*65, '努力加载中', {
       fontSize: '20px',
       fill: 'rgb(173,151,138)'
     });
-    var progressText = this.add.text(scaleConfig.moveX-15, scaleConfig.moveY, '0%', {
+    var progressText = this.add.text(scaleConfig.moveX-42*scaleConfig.gamescaleX, scaleConfig.moveY, '0%', {
       fontSize: '20px',
       fill: 'rgb(83,67,58)'
     });
@@ -200,7 +200,6 @@ class LetterScene extends Phaser.Scene {
     }, this)
   }
   update() {
-    
     if (letter.y >= 800 * scaleConfig.gamescaleY) {
       letter.y -= 1;
     } else {

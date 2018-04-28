@@ -44,7 +44,7 @@ class QRcodeScene extends Phaser.Scene{
     QRword2.scaleX = scaleConfig.gamescaleX;
     QRword2.scaleY = scaleConfig.gamescaleY;
 
-    QRword3 = this.add.sprite(scaleConfig.gamescaleX*376,scaleConfig.gamescaleY*950,'QRword3').setAlpha(0);
+    QRword3 = this.add.sprite(scaleConfig.gamescaleX*376,scaleConfig.gamescaleY*962,'QRword3').setAlpha(0);
     QRword3.scaleX = scaleConfig.gamescaleX;
     QRword3.scaleY = scaleConfig.gamescaleY;
 
@@ -52,7 +52,7 @@ class QRcodeScene extends Phaser.Scene{
     // QRcode.scaleX = scaleConfig.gamescaleX;
     // QRcode.scaleY = scaleConfig.gamescaleY;
 
-    QRpower = this.add.sprite(scaleConfig.gamescaleX*376,scaleConfig.gamescaleY*980,'QRpower').setAlpha(0);
+    QRpower = this.add.sprite(scaleConfig.gamescaleX*376,scaleConfig.gamescaleY*1292,'QRpower').setAlpha(0);
     QRpower.scaleX = scaleConfig.gamescaleX;
     QRpower.scaleY = scaleConfig.gamescaleY;
 

@@ -19,9 +19,7 @@ class HistoryScene extends Phaser.Scene {
     });
   }
   preload() {
-    // this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
-    // this.load.image('coffee', 'http://p688ihx0v.bkt.clouddn.com/coffee.png');
-    // this.load.image('leaves', 'http://p688ihx0v.bkt.clouddn.com/leaves.png');
+ 
 
   }
 
@@ -70,18 +68,19 @@ class HistoryScene extends Phaser.Scene {
     historyPhoto6.scaleX = scaleConfig.gamescaleX;
     historyPhoto6.scaleY = scaleConfig.gamescaleY;
 
-    var drag = false;
+    let drag = false;
 
     this.input.on('pointermove', function() {
       drag = true;
     }, this)
 
     this.input.on('pointerup', function() {
-      if (drag && slideFlag ) {
+      if (drag && slideFlag) {
         
-        this.scene.start('RecruitScene');
+        this.scene.start('TeacherScene');
       }
-    }, this);
+    }, this)
+
   }
 
   update() {
@@ -181,9 +180,18 @@ class HistoryScene extends Phaser.Scene {
           alpha8 += 0.015;
           historyPhoto6.setAlpha(alpha8);
         }
-        if(alpha8 >= 1){
+        if(alpha8>=1){
           slideFlag = true;
         }
+       
+      },
+      callbackScope: this
+    });
+    this.time.addEvent({
+      delay: 17500,
+      callback: function ()
+      {
+        this.scene.start('RecruitScene');
       },
       callbackScope: this
     });

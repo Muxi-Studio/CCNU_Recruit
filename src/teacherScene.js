@@ -19,10 +19,7 @@ class TeacherScene extends Phaser.Scene {
     });
   }
   preload() {
-    // this.load.image('hat', 'http://p688ihx0v.bkt.clouddn.com/hat.png');
-    // this.load.image('teacherWord1', 'http://p688ihx0v.bkt.clouddn.com/teacherWord1.png');
-    // this.load.image('teacherWord2', 'http://p688ihx0v.bkt.clouddn.com/teacherWord2.png');
-    // this.load.image('teacherWord3', 'http://p688ihx0v.bkt.clouddn.com/teacherWord3.png'); 
+   
   }
   create() { 
    var background = this.add.image(scaleConfig.moveX, scaleConfig.moveY, 'background');
@@ -107,6 +104,14 @@ class TeacherScene extends Phaser.Scene {
         if(alpha3>=1){
           slideFlag = true;
         }
+      },
+      callbackScope: this
+    });
+    this.time.addEvent({
+      delay: 9000,
+      callback: function ()
+      {
+        this.scene.start('LoveScene');
       },
       callbackScope: this
     });

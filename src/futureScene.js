@@ -49,7 +49,7 @@ class futureScene extends Phaser.Scene{
         waterMark.scaleX = scaleConfig.gamescaleX;
         waterMark.scaleY = scaleConfig.gamescaleY;
 
-        var drag = false;
+    var drag = false;
 
     this.input.on('pointermove', function() {
       drag = true;
@@ -106,10 +106,19 @@ class futureScene extends Phaser.Scene{
                 if(alpha3<=1){
                     alpha3 += 0.008;
                     waterMark.setAlpha(alpha3);
-                }
-                if(alpha3 >= 1){
+                } 
+                if(alpha3>=1){
                     slideFlag = true;
                 }
+               
+            },
+            callbackScope: this,    
+        }); 
+        this.time.addEvent({
+            delay: 8000,
+            callback: function ()
+            {
+                this.scene.start('QRcodeScene');
             },
             callbackScope: this,    
         }); 

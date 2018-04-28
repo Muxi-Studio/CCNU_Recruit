@@ -7,6 +7,8 @@ var alpha2 = 0;
 var alpha3 = 0;
 var alpha4 = 0;
 var slideFlag = false;
+let dinnerAlpha , packageImageAplha ;
+dinnerAlpha = packageImageAplha = 0;
 
 class GuideScene extends Phaser.Scene {
   constructor(load) {
@@ -60,11 +62,11 @@ class GuideScene extends Phaser.Scene {
     guideWord2.scaleX = scaleConfig.gamescaleX;
     guideWord2.scaleY = scaleConfig.gamescaleY;
 
-    guideWord3 = this.add.sprite(scaleConfig.moveX, 962 * scaleConfig.gamescaleY, 'guideWord3').setAlpha(0);
+    guideWord3 = this.add.sprite(scaleConfig.moveX, 900 * scaleConfig.gamescaleY, 'guideWord3').setAlpha(0);
     guideWord3.scaleX = scaleConfig.gamescaleX;
     guideWord3.scaleY = scaleConfig.gamescaleY;
 
-    guideWord4 = this.add.sprite(scaleConfig.moveX, 1160 * scaleConfig.gamescaleY, 'guideWord4').setAlpha(0);
+    guideWord4 = this.add.sprite(scaleConfig.moveX, 1022 * scaleConfig.gamescaleY, 'guideWord4').setAlpha(0);
     guideWord4.scaleX = scaleConfig.gamescaleX;
     guideWord4.scaleY = scaleConfig.gamescaleY;
 
@@ -92,7 +94,23 @@ class GuideScene extends Phaser.Scene {
         if(alpha1 <= 1){
           alpha1 += 0.008;
           guideWord1.setAlpha(alpha1);
-          dinner.setAlpha(alpha1);
+          // dinner.setAlpha(alpha1);
+          // if (dinner.x <= 85 * scaleConfig.gamescaleX){
+          //   dinner.x += 2 * scaleConfig.gamescaleX
+          // }
+        }
+      },
+      callbackScope: this
+    });
+
+
+    this.time.addEvent({
+      delay: 2500,
+      callback: function ()
+      {
+        if(dinnerAlpha<= 1){
+          dinnerAlpha += 0.008;
+          dinner.setAlpha(dinnerAlpha);
           if (dinner.x <= 85 * scaleConfig.gamescaleX){
             dinner.x += 2 * scaleConfig.gamescaleX
           }
@@ -102,13 +120,29 @@ class GuideScene extends Phaser.Scene {
     });
 
     this.time.addEvent({
-      delay: 2500,
+      delay: 3000,
       callback: function ()
       {
         if(alpha2 <= 1){
           alpha2 += 0.008;
           guideWord2.setAlpha(alpha2);
-          packageImage.setAlpha(alpha2);
+          // packageImage.setAlpha(alpha2);
+          // if (packageImage.x >= 514 * scaleConfig.gamescaleX){
+          //   packageImage.x -= 2 * scaleConfig.gamescaleX
+          // }
+        }
+      },
+      callbackScope: this
+    });
+
+    this.time.addEvent({
+      delay: 4500,
+      callback: function ()
+      {
+        if(packageImageAplha <= 1){
+          packageImageAplha += 0.008;
+          // guideWord2.setAlpha(alpha2);
+          packageImage.setAlpha(packageImageAplha);
           if (packageImage.x >= 514 * scaleConfig.gamescaleX){
             packageImage.x -= 2 * scaleConfig.gamescaleX
           }
@@ -117,8 +151,9 @@ class GuideScene extends Phaser.Scene {
       callbackScope: this
     });
 
+
     this.time.addEvent({
-      delay: 4000,
+      delay: 5000,
       callback: function ()
       {
         if(alpha3 <= 1){
@@ -130,7 +165,7 @@ class GuideScene extends Phaser.Scene {
     });
 
     this.time.addEvent({
-      delay: 5000,
+      delay: 6000,
       callback: function ()
       {
         if(alpha4 <= 1){
@@ -138,12 +173,22 @@ class GuideScene extends Phaser.Scene {
           guideWord4.setAlpha(alpha4);
           northGate.setAlpha(alpha4);
         }
-       if(alpha4 >= 1){
+        if(alpha4>=1){
           slideFlag = true;
         }
+      
       },
       callbackScope: this
     });
+    this.time.addEvent({
+      delay: 13000,
+      callback: function ()
+      {
+        this.scene.start('TeacherScene');
+      },
+      callbackScope: this
+    });
+
    }
 }
 

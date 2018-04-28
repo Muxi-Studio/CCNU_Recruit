@@ -111,8 +111,17 @@ class childrenScene extends Phaser.Scene {
                 }
                 if(alpha4 >= 1){
                     slideFlag = true;
-                   // console.log()
+                   
                 }
+            },
+            callbackScope: this,
+            
+        });
+        this.time.addEvent({
+            delay: 11000,
+            callback: function ()
+            {
+                this.scene.start('ChildrenScene');
             },
             callbackScope: this,
             

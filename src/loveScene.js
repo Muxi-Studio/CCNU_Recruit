@@ -33,16 +33,16 @@ class LoveScene extends Phaser.Scene {
 
 
 
-    loveWord1 = this.add.sprite(scaleConfig.moveX, 389 * scaleConfig.gamescaleY, 'loveWord1').setAlpha(0);
+    loveWord1 = this.add.sprite(scaleConfig.moveX, 488 * scaleConfig.gamescaleY, 'loveWord1').setAlpha(0);
     loveWord1.scaleX = scaleConfig.gamescaleX;
     loveWord1.scaleY = scaleConfig.gamescaleY;
 
-    road = this.add.sprite(0, 0, 'road').setOrigin(0);
-    road.setAlpha(0);
-    road.scaleX = scaleConfig.gamescaleX;
-    road.scaleY = scaleConfig.gamescaleY;
+    // road = this.add.sprite(0, 0, 'road').setOrigin(0);
+    // road.setAlpha(0);
+    // road.scaleX = scaleConfig.gamescaleX;
+    // road.scaleY = scaleConfig.gamescaleY;
 
-    loveWord2 = this.add.sprite(scaleConfig.moveX, 715 * scaleConfig.gamescaleY, 'loveWord2').setAlpha(0);
+    loveWord2 = this.add.sprite(scaleConfig.moveX, 820 * scaleConfig.gamescaleY, 'loveWord2').setAlpha(0);
     loveWord2.scaleX = scaleConfig.gamescaleX;
     loveWord2.scaleY = scaleConfig.gamescaleY;
 
@@ -51,9 +51,9 @@ class LoveScene extends Phaser.Scene {
     art.scaleX = scaleConfig.gamescaleX;
     art.scaleY = scaleConfig.gamescaleY;
 
-    loveWord3 = this.add.sprite(scaleConfig.moveX, 1010 * scaleConfig.gamescaleY, 'loveWord3').setAlpha(0);
-    loveWord3.scaleX = scaleConfig.gamescaleX;
-    loveWord3.scaleY = scaleConfig.gamescaleY;
+    // loveWord3 = this.add.sprite(scaleConfig.moveX, 1010 * scaleConfig.gamescaleY, 'loveWord3').setAlpha(0);
+    // loveWord3.scaleX = scaleConfig.gamescaleX;
+    // loveWord3.scaleY = scaleConfig.gamescaleY;
 
     tree = this.add.sprite(0, 0, 'tree').setOrigin(0);
     tree.setAlpha(0);
@@ -84,8 +84,8 @@ class LoveScene extends Phaser.Scene {
         if(alpha1 <= 1){
           alpha1 += 0.008;
           loveWord1.setAlpha(alpha1);
-          road.setAlpha(alpha1);
-          if (road.y <= 266 * scaleConfig.gamescaleY) road.y += 2;
+          // road.setAlpha(alpha1);
+          // if (road.y <= 266 * scaleConfig.gamescaleY) road.y += 2;
         }
       },
       callbackScope: this
@@ -101,27 +101,41 @@ class LoveScene extends Phaser.Scene {
           art.setAlpha(alpha2);
           if (art.y <= 650 * scaleConfig.gamescaleY) art.y += 3;
         }
-      },
-      callbackScope: this
-    });
-
-    this.time.addEvent({
-      delay: 5000,
-      callback: function ()
-      {
-        if(alpha3 <= 1){
-          alpha3 += 0.008;
-          loveWord3.setAlpha(alpha3);
-          tree.setAlpha(alpha3);
-          if (tree.y <= 980 * scaleConfig.gamescaleY) tree.y += 4;
-        }
-        if(alpha3 >= 1){
+        if(alpha2>=1){
           slideFlag = true;
         }
       },
       callbackScope: this
     });
+
+    this.time.addEvent({
+      delay: 4000,
+      callback: function ()
+      {
+        if(alpha3 <= 1){
+          alpha3 += 0.008;
+         // loveWord3.setAlpha(alpha3);
+          tree.setAlpha(alpha3);
+          if (tree.y <= 980 * scaleConfig.gamescaleY) tree.y += 4;
+        
+        }
+        
+      },
+      callbackScope: this
+    });
+    this.time.addEvent({
+      delay: 10500,
+      callback: function ()
+      {
+        this.scene.start('HistoryScene');
+      },
+      callbackScope: this
+    });
+    
   }
+
+
+
 }
 
 export default LoveScene;

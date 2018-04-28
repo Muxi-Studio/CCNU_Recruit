@@ -3,6 +3,7 @@ var webpack = require('webpack')
 var CleanWebpackPlugin = require('clean-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 // Phaser webpack config
 var phaserModule = path.join(__dirname, '/node_modules/phaser/')
@@ -32,12 +33,13 @@ module.exports = {
     definePlugin,
     new CleanWebpackPlugin(['build']),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new UglifyJsPlugin(),
     // new webpack.optimize.UglifyJsPlugin({
-    //   drop_console: true,
-    //   minimize: true,
-    //   output: {
-    //     comments: false
-    //   }
+    //   // drop_console: true,
+    //   // minimize: true,
+    //   // output: {
+    //   //   comments: false
+    //   // }
     // }),
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' /* chunkName= */, filename: 'js/vendor.bundle.js' /* filename= */ }),
     new HtmlWebpackPlugin({
