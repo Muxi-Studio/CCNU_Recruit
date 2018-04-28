@@ -14,6 +14,7 @@ class childrenScene extends Phaser.Scene {
 
     }
     create(){
+        
     background = this.add.sprite(scaleConfig.moveX, scaleConfig.moveY, 'background');
     background.scaleX = scaleConfig.gamescaleX;
     background.scaleY = scaleConfig.gamescaleY;
@@ -26,7 +27,7 @@ class childrenScene extends Phaser.Scene {
     leaves.scaleX = scaleConfig.gamescaleX;
     leaves.scaleY = scaleConfig.gamescaleY;
     
-    schoolHouse  = this.matter.add.sprite(scaleConfig.gamescaleX*376,scaleConfig.gamescaleY*300,'school-house');
+    schoolHouse  = this.matter.add.sprite(scaleConfig.gamescaleX*376,scaleConfig.gamescaleY*300,'school-house',null,{friction:0.005, restitution:1});
     // schoolHouse = this.add.sprite(scaleConfig.gamescaleX*376,scaleConfig.gamescaleY*390,'school-house');
     schoolHouse.scaleX = scaleConfig.gamescaleX;
     schoolHouse.scaleY = scaleConfig.gamescaleY;

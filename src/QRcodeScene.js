@@ -4,7 +4,7 @@ var background,coffee,leaves;
 var alphaC , alpha1 ,alpha2 , alpha3,alpha4;
 alphaC = alpha1 = alpha2 = alpha3 = alpha4 = 0;
 var rotaFlag = 0;
-var para, node;
+var para,node;
 
 class QRcodeScene extends Phaser.Scene{
     constructor(){
@@ -20,7 +20,6 @@ class QRcodeScene extends Phaser.Scene{
     }
     create() {
         //设置位置和图片缩放比例
-
     background = this.add.sprite(scaleConfig.moveX, scaleConfig.moveY, 'background');
     background.scaleX = scaleConfig.gamescaleX;
     background.scaleY = scaleConfig.gamescaleY;

@@ -34,10 +34,6 @@ let config = {
             enableSleeping: true
         }
     },
-    // files:[
-    //     {type:"image",key:"loading-background",url:"../assets/loading-background.png"}
-    // ]
-    
 };
 
 let game = new Phaser.Game(config);
