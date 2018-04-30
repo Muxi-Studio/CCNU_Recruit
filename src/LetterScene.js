@@ -72,25 +72,51 @@ class LetterScene extends Phaser.Scene {
     this.load.image('background','http://p688ihx0v.bkt.clouddn.com/background.png');
     this.load.image('coffee', 'http://p688ihx0v.bkt.clouddn.com/coffee.png');
     this.load.image('leaves', 'http://p688ihx0v.bkt.clouddn.com/leaves.png');
-    this.load.image('dinner', 'http://p688ihx0v.bkt.clouddn.com/eat.png');
-    this.load.image('packageImage', 'http://p688ihx0v.bkt.clouddn.com/packageImage.png');
-    this.load.image('northGate', 'http://p688ihx0v.bkt.clouddn.com/northGate.png');
-    this.load.image('guideWord1', 'http://p688ihx0v.bkt.clouddn.com/guideWord1.png');
-    this.load.image('guideWord2', 'http://p688ihx0v.bkt.clouddn.com/guideWord2.png');
-    this.load.image('guideWord3', 'http://p688ihx0v.bkt.clouddn.com/guideWord3.png');
-    this.load.image('guideWord4', 'http://p688ihx0v.bkt.clouddn.com/guideWord4.png'); 
+   
+
+
+    //Guide1
+    this.load.image('guide1Word1','http://p688ihx0v.bkt.clouddn.com/guide1Word1.png');
+    this.load.image('guide1Word2','http://p688ihx0v.bkt.clouddn.com/guide1Word2.png');
+    this.load.image('guide1Word3','http://p688ihx0v.bkt.clouddn.com/guide1Word3.png');
+    this.load.image('guide1Word4','http://p688ihx0v.bkt.clouddn.com/guide1Word4.png');
+    this.load.image('guide1Package','http://p688ihx0v.bkt.clouddn.com/guide1Package.png');
+    this.load.image('guide1MovePackage','http://p688ihx0v.bkt.clouddn.com/guide1MovePackage.png');
+    this.load.image('guide1ShakeLeaf','http://p688ihx0v.bkt.clouddn.com/guide1ShakeLeaf.png');
+
+    //Guide2
+    this.load.image('guide2Word1','http://p688ihx0v.bkt.clouddn.com/guide2Word1.png');
+    this.load.image('guide2Word2','http://p688ihx0v.bkt.clouddn.com/guide2Word2.png');
+    this.load.image('guide2Word3','http://p688ihx0v.bkt.clouddn.com/guide2Word3.png');
+    this.load.image('guide2Word4','http://p688ihx0v.bkt.clouddn.com/guide2Word4.png');
+    this.load.image('guide2Eat','http://p688ihx0v.bkt.clouddn.com/guide2Eat.png');
+    this.load.image('guide2Lib','http://p688ihx0v.bkt.clouddn.com/guide2Lib.png');
+    this.load.image('guide2Gar','http://p688ihx0v.bkt.clouddn.com/guide2Garden.png');
+ 
+
      // Teacher
     this.load.image('hat', 'http://p688ihx0v.bkt.clouddn.com/hat.png');
     this.load.image('teacherWord1', 'http://p688ihx0v.bkt.clouddn.com/teacherWord1.png');
     this.load.image('teacherWord2', 'http://p688ihx0v.bkt.clouddn.com/teacherWord2.png');
-    this.load.image('teacherWord3', 'http://p688ihx0v.bkt.clouddn.com/teacherWord3.png'); 
-      //love
+    this.load.image('teacherWord3', 'http://p688ihx0v.bkt.clouddn.com/teacherWord3.png');
+    this.load.image('teacherWord4', 'http://p688ihx0v.bkt.clouddn.com/teacherWord4.png');  
+      //love1
       this.load.image('road', 'http://p688ihx0v.bkt.clouddn.com/road.png');
       this.load.image('tree', 'http://p688ihx0v.bkt.clouddn.com/tree.png');
-      this.load.image('art', 'http://p688ihx0v.bkt.clouddn.com/art.png');
-      this.load.image('loveWord1', 'http://p688ihx0v.bkt.clouddn.com/loveWord1.png');
-      this.load.image('loveWord2', 'http://p688ihx0v.bkt.clouddn.com/loveWord2.png');
-      this.load.image('loveWord3', 'http://p688ihx0v.bkt.clouddn.com/loveWord3.png');
+      this.load.image('love1Word1', 'http://p688ihx0v.bkt.clouddn.com/love1Word1.png');
+      this.load.image('love1Word2', 'http://p688ihx0v.bkt.clouddn.com/love1Word2.png');
+      this.load.image('love1Word3', 'http://p688ihx0v.bkt.clouddn.com/love1Word3.png');
+      this.load.image('love1Word4', 'http://p688ihx0v.bkt.clouddn.com/love1Word4.png');
+
+      //love2
+      this.load.image('love2House3', 'http://p688ihx0v.bkt.clouddn.com/love2House10.png');
+      this.load.image('love2House10', 'http://p688ihx0v.bkt.clouddn.com/love2House3.png');
+      this.load.image('love2MailTag', 'http://p688ihx0v.bkt.clouddn.com/love2MailTag.png');
+      this.load.image('love2Word1', 'http://p688ihx0v.bkt.clouddn.com/love2Word1.png');
+      this.load.image('love2Word2', 'http://p688ihx0v.bkt.clouddn.com/love2Word2.png');
+      this.load.image('love2Word3', 'http://p688ihx0v.bkt.clouddn.com/love2Word3.png');
+
+
       //history
       this.load.image('historyWord1', 'http://p688ihx0v.bkt.clouddn.com/historyWord1.png');
       this.load.image('historyWord2', 'http://p688ihx0v.bkt.clouddn.com/historyWord2.png');
@@ -133,7 +159,7 @@ class LetterScene extends Phaser.Scene {
       fontSize: '20px',
       fill: 'rgb(173,151,138)'
     });
-    var progressText = this.add.text(scaleConfig.moveX-42*scaleConfig.gamescaleX, scaleConfig.moveY, '0%', {
+    var progressText = this.add.text(scaleConfig.moveX-38*scaleConfig.gamescaleX, scaleConfig.moveY, '0%', {
       fontSize: '20px',
       fill: 'rgb(83,67,58)'
     });
@@ -194,8 +220,8 @@ class LetterScene extends Phaser.Scene {
     this.input.on('pointerup', function() {
       if (drag) {
       
-        
-        this.scene.start('GuideScene');
+        this.scene.start('Guide1Scene');
+
       }
     }, this)
   }

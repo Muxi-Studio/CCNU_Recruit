@@ -48,9 +48,7 @@ class QRcodeScene extends Phaser.Scene{
     QRword3.scaleX = scaleConfig.gamescaleX;
     QRword3.scaleY = scaleConfig.gamescaleY;
 
-    // QRcode = this.add.sprite(scaleConfig.gamescaleX*376,scaleConfig.gamescaleY*784,'QRcode').setAlpha(0);
-    // QRcode.scaleX = scaleConfig.gamescaleX;
-    // QRcode.scaleY = scaleConfig.gamescaleY;
+   
 
     QRpower = this.add.sprite(scaleConfig.gamescaleX*376,scaleConfig.gamescaleY*1292,'QRpower').setAlpha(0);
     QRpower.scaleX = scaleConfig.gamescaleX;
@@ -106,7 +104,7 @@ class QRcodeScene extends Phaser.Scene{
             {
                 if(alphaC <=1){
                     alphaC += 0.008;
-                    // QRcode.setAlpha(alphaC);
+                  
                     para.style.opacity = alphaC;
                 }
             },

@@ -1,21 +1,23 @@
 import Animated from 'phaser-animated-tiles';
 import scaleConfig from './common';
-// import LoveScene from './loveScene'
 
-var coffee, leaves, teacherWord1,teacherWord2, teacherWord3;
+
+var coffee, leaves, teacherWord1,teacherWord2, teacherWord3,teacherWord4;
 var alpha1 = 0;
 var alpha2 = 0;
 var alpha3 = 0;
+var alpha4 = 0;
+var alphaH = 0;
 var slideFlag = false;
+var hat;
+
 
 
 class TeacherScene extends Phaser.Scene {
   constructor(test) {
     super({
       key: 'TeacherScene',
-      // files:[
-      //   {type:'image',key:'hat',url:"http://p688ihx0v.bkt.clouddn.com/hat.png"}
-      // ]
+      
     });
   }
   preload() {
@@ -35,24 +37,26 @@ class TeacherScene extends Phaser.Scene {
     leaves.scaleY = scaleConfig.gamescaleY;
 
 
-
-
     
-    var hat = this.add.sprite(230 * scaleConfig.gamescaleX, 1063 * scaleConfig.gamescaleY, 'hat');
+    hat = this.add.sprite(scaleConfig.moveX+25*scaleConfig.gamescaleX, 1054 * scaleConfig.gamescaleY, 'hat').setAlpha(0);
     hat.scaleX = scaleConfig.gamescaleX;
     hat.scaleY = scaleConfig.gamescaleY;
 
-    teacherWord1 = this.add.sprite(scaleConfig.moveX, 349 * scaleConfig.gamescaleY, 'teacherWord1').setAlpha(0);
+    teacherWord1 = this.add.sprite(scaleConfig.moveX+25*scaleConfig.gamescaleX, 349 * scaleConfig.gamescaleY, 'teacherWord1').setAlpha(0);
     teacherWord1.scaleX = scaleConfig.gamescaleX;
     teacherWord1.scaleY = scaleConfig.gamescaleY;
 
-    teacherWord2 = this.add.sprite(scaleConfig.moveX, 685 * scaleConfig.gamescaleY, 'teacherWord2').setAlpha(0);
+    teacherWord2 = this.add.sprite(scaleConfig.moveX+30*scaleConfig.gamescaleX, 423 * scaleConfig.gamescaleY, 'teacherWord2').setAlpha(0);
     teacherWord2.scaleX = scaleConfig.gamescaleX;
     teacherWord2.scaleY = scaleConfig.gamescaleY;
 
-    teacherWord3 = this.add.sprite(scaleConfig.moveX, 1044 * scaleConfig.gamescaleY, 'teacherWord3').setAlpha(0);
+    teacherWord3 = this.add.sprite(scaleConfig.moveX+25*scaleConfig.gamescaleX,   624 * scaleConfig.gamescaleY, 'teacherWord3').setAlpha(0);
     teacherWord3.scaleX = scaleConfig.gamescaleX;
     teacherWord3.scaleY = scaleConfig.gamescaleY;
+
+    teacherWord4 = this.add.sprite(scaleConfig.moveX+25*scaleConfig.gamescaleX, 812 * scaleConfig.gamescaleY, 'teacherWord4').setAlpha(0);
+    teacherWord4.scaleX = scaleConfig.gamescaleX;
+    teacherWord4.scaleY = scaleConfig.gamescaleY;
 
     let drag = false;
     this.input.on('pointermove', function() {
@@ -62,7 +66,7 @@ class TeacherScene extends Phaser.Scene {
     this.input.on('pointerup', function() {
       if (drag && slideFlag) {
        
-        this.scene.start('LoveScene');
+        this.scene.start('Love1Scene');
       }
     }, this)
   }
@@ -101,17 +105,58 @@ class TeacherScene extends Phaser.Scene {
           alpha3 += 0.008;
           teacherWord3.setAlpha(alpha3);
         }
-        if(alpha3>=1){
+      
+      },
+      callbackScope: this
+    });
+    this.time.addEvent({
+      delay: 7000,
+      callback: function ()
+      {
+        if(alpha4 <= 1){
+          alpha4 += 0.008;
+          teacherWord4.setAlpha(alpha4);
+        }
+      
+      },
+      callbackScope: this
+    });
+
+
+    this.time.addEvent({
+      delay: 10000,
+      callback: function ()
+      {
+        if(alpha4 <= 1){
+          alpha4 += 0.008;
+          teacherWord4.setAlpha(alpha4);
+        }
+        
+      },
+      callbackScope: this
+    });
+
+    this.time.addEvent({
+      delay: 12000,
+      callback: function ()
+      {
+        if(alphaH <= 1){
+          alphaH += 0.008;
+          hat.setAlpha(alphaH);
+        }
+        if(alphaH>=1){
           slideFlag = true;
         }
       },
       callbackScope: this
     });
+
+
     this.time.addEvent({
-      delay: 9000,
+      delay: 15000,
       callback: function ()
       {
-        this.scene.start('LoveScene');
+        this.scene.start('Love1Scene');
       },
       callbackScope: this
     });
