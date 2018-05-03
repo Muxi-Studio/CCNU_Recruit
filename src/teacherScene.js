@@ -123,18 +123,7 @@ class TeacherScene extends Phaser.Scene {
     });
 
 
-    this.time.addEvent({
-      delay: 10000,
-      callback: function ()
-      {
-        if(alpha4 <= 1){
-          alpha4 += 0.008;
-          teacherWord4.setAlpha(alpha4);
-        }
-        
-      },
-      callbackScope: this
-    });
+   
 
     this.time.addEvent({
       delay: 12000,
